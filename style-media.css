@@ -186,7 +186,7 @@
         padding-left: 0px;
     }
 
-    .one, .two, .three, .four, .five {
+    .one, .two, .three, .four, .five, .six {
         width: 100%;
         height: 45px;
         
@@ -198,7 +198,7 @@
     
     }
     
-    .s-one, .s-two, .s-three, .s-four, .s-five {
+    .s-one, .s-two, .s-three, .s-four, .s-five, .s-six {
         width: 90%;
         height: 40px;
         padding-top: 5px;
@@ -224,6 +224,10 @@
     
     .s-five {
         width: 99%;
+    }
+
+    .s-six {
+        width: 30%;
     }
     
   }
