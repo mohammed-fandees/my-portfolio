@@ -364,6 +364,7 @@ color: #000;
     outline: none;
     border: none;
     color: #eee;
+    font-size: 20px;
 }
 
 .mes ul li {
@@ -378,7 +379,7 @@ color: #000;
 
 .mes {
     margin-left: 150px;
-
+    
 }
 
 .l-t {
@@ -399,6 +400,7 @@ textarea {
     outline: none;
     border: none;
     color: #eee;
+    font-size: 20px;
 }
 
 .sub {
