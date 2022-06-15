@@ -279,7 +279,7 @@ color: #000;
 /* Skills rateing */
 
 .s-one, .s-two, .s-three, .s-four, .s-five, .s-six {
-    width: 560px;
+    width: 90%;
     height: 40px;
     padding-top: 5px;
     background: #313131;
@@ -292,23 +292,23 @@ color: #000;
 
 
 .s-two {
-    width: 500px;
+    width: 80%;
 }
 
 .s-three {
-    width: 150px;
+    width: 25%;
 }
 
 .s-four {
-    width: 100px;
+    width: 13%;
 }
 
 .s-five {
-    width: 595px;
+    width: 99.5%;
 }
 
 .s-six {
-    width: 180px;
+    width: 45%;
 }
 
 .li-lan {

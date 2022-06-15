@@ -204,38 +204,6 @@
     
     }
     
-    .s-one, .s-two, .s-three, .s-four, .s-five, .s-six {
-        width: 90%;
-        height: 40px;
-        padding-top: 5px;
-        background: #313131;
-        margin-bottom: 20px;
-        border-radius: 3px;
-        color: #fff;
-        font-weight: bold;
-    
-    }
-    
-    .s-two {
-        width: 80%;
-    }
-    
-    .s-three {
-        width: 25%;
-    }
-    
-    .s-four {
-        width: 10%;
-    }
-    
-    .s-five {
-        width: 99%;
-    }
-
-    .s-six {
-        width: 30%;
-    }
-    
   }
 
   /* Contact Section */
