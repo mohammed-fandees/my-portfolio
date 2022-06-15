@@ -219,13 +219,13 @@ color: #000;
     font-weight: normal;
     border-bottom: 3px solid rgb(236, 150, 51);
     width: 8%;
-    margin-left: 200px;
+    margin-left: 14.6%;
     display: inline;
 }
 
 .skill .sk {
     width: 4%;
-    margin-left: 200px;
+    margin-left: 14.6%;
 }
 
 .skill h1 {
@@ -234,34 +234,36 @@ color: #000;
 }
 
 .spic {
-    padding-left: 70px;
+    padding-left: 16.3%;
+    display: inline;
+    color: #838c95;
+    font-size: 15px;
 }
 
 .p-container {
-    margin-top: 80px;
+    margin: 80px 0px;
 }
 
 .p-container p {
-    margin-left: 475px;
+    margin-left: 35%;
     font-family: cursive;
-    color: #6e7881;
+    color: #838c95;
 }
 
 .p-container .tow-p {
     margin-bottom: 40px;
-    font-family: librebaskerville-italic;
-    font-weight: bold;
+    font-family:  "opensans-regular", sans-serif;
 }
 
 .p-container .one-p {
     max-width: 40%;
-    font-family: librebaskerville-italic;
-    font-weight: bold;
+    font-family: "opensans-regular", sans-serif;
+    font-size: 15px;
 }
 
 .skill ul {
     list-style-type: none;
-    padding-left: 400px;
+    padding-left: 35%;
 }
 
 .one, .two, .three, .four, .five, .six {

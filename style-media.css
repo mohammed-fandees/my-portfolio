@@ -130,7 +130,6 @@
 
     .skill h3 {
         font-weight: normal;
-        border-bottom: 3px solid #11abb0;
         width: 8%;
         margin: 0;
         display: inline;
@@ -162,22 +161,18 @@
     .p-container p {
         margin-left: 5px; 
         font-family: cursive;
-        color: #6e7881;
 
     }
     
     .p-container .one-p {
         margin-bottom: 40px;
         max-width: 100%;
-        font-family: librebaskerville-italic;
-        font-weight: bold;
         text-align: left;
     }
     
     .p-container .tow-p {
         margin-bottom: 40px;
-        font-family: librebaskerville-italic;
-        font-weight: bold;
+
         text-align: left;
     }
     
@@ -259,7 +254,7 @@
 }
 
 .s {
-    color: #11abb0;
+
     margin-right: 110px;
 }
 
