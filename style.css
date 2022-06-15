@@ -217,7 +217,7 @@ color: #000;
 
 .skill h3 {
     font-weight: normal;
-    border-bottom: 3px solid #11abb0;
+    border-bottom: 3px solid rgb(236, 150, 51);
     width: 8%;
     margin-left: 200px;
     display: inline;
@@ -372,7 +372,7 @@ color: #000;
 }
 
 .s {
-    color: #11abb0;
+    color: rgb(236, 150, 51);
     margin-right: 110px;
 }
 
