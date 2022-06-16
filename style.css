@@ -301,16 +301,18 @@ color: #000;
     width: 25%;
 }
 
-.s-four {
+.s-five {
     width: 13%;
 }
 
-.s-five {
-    width: 99.5%;
+.s-four {
+    width: 100%;
+    border-radius: 3px;
 }
 
 .s-six {
-    width: 70%;
+    width: 100%;
+    border-radius: 3px;
 }
 
 .li-lan {
