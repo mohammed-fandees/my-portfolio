@@ -19,6 +19,11 @@ header {
     height: 100vh;
 } 
 
+.header-a:hover {
+    color: rgb(236, 150, 51);
+    transition: .3s ease;
+}
+
 /* nav {
 
 } */
