@@ -266,7 +266,7 @@ color: #000;
     padding-left: 35%;
 }
 
-.one, .two, .three, .four, .five, .six {
+.html, .css, .javascript, .figma, .cpp, .github, .cSharp {
     width: 600px;
     height: 45px;
     
@@ -280,7 +280,7 @@ color: #000;
 
 /* Skills rateing */
 
-.s-one, .s-two, .s-three, .s-four, .s-five, .s-six {
+.rate-html, .rate-css, .rate-javascript, .rate-figma, .rate-cpp, .rate-github, .rate-cSharp {
     width: 90%;
     height: 40px;
     padding-top: 5px;
@@ -293,25 +293,30 @@ color: #000;
 }
 
 
-.s-two {
+.rate-css {
     width: 80%;
 }
 
-.s-three {
+.rate-javascript {
     width: 25%;
 }
 
-.s-five {
+.rate-cpp {
     width: 13%;
 }
 
-.s-four {
+.rate-figma {
     width: 100%;
     border-radius: 3px;
 }
 
-.s-six {
+.rate-github {
     width: 100%;
+    border-radius: 3px;
+}
+
+.rate-cSharp {
+    width: 70%;
     border-radius: 3px;
 }
 
