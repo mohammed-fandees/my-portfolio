@@ -299,7 +299,7 @@ color: #000;
 
 
 .rate-css {
-    width: 80%;
+    width: 50%;
 }
 
 .rate-javascript {
@@ -311,17 +311,17 @@ color: #000;
 }
 
 .rate-figma {
-    width: 100%;
-    border-radius: 3px;
+    width: 95%;
+   
 }
 
 .rate-github {
-    width: 100%;
-    border-radius: 3px;
+    width: 70%;
+
 }
 
 .rate-cSharp {
-    width: 70%;
+    width: 75%;
     
 }
 
