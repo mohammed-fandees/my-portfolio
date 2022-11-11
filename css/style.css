@@ -371,6 +371,7 @@ hr {
     padding-top: 20px;
     padding-bottom: 30px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     gap: 30px;
 }
@@ -428,7 +429,6 @@ hr {
 
 .contact {
     background-color: var(--sec-color);
-
 }
 
 .contact .first {
