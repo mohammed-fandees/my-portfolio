@@ -493,7 +493,6 @@ hr {
 
 .contact input:focus, textarea:focus {
     background-color: var(--main-color);
-    margin-bottom: 42px;
 }
 
 .contact input::placeholder, textarea::placeholder {
