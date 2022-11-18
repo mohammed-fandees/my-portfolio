@@ -586,6 +586,7 @@ hr {
     -moz-border-radius: 3px;
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
+    resize: none;
 }
 
 .contact input:focus, textarea:focus {
