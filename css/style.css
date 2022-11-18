@@ -329,6 +329,22 @@ hr {
     -moz-border-radius: 3px 0 0 3px;
     -ms-border-radius: 3px 0 0 3px;
     -o-border-radius: 3px 0 0 3px;
+    position: relative;
+}
+
+.resume .container .col .skl .fill::after {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
 }
 
 .resume .container .col .skl .f .fill {
@@ -337,10 +353,18 @@ hr {
     background-color: #313131;
 }
 
+.resume .container .col .skl .f .fill::after {
+    content: '95%';
+}
+
 .resume .container .col .skl .g .fill {
     width: 70%;
     height: 45px;
     background-color: #313131;
+}
+
+.resume .container .col .skl .g .fill::after {
+    content: '70%';
 }
 
 .resume .container .col .skl .h .fill {
@@ -349,10 +373,18 @@ hr {
     background-color: #313131;
 }
 
+.resume .container .col .skl .h .fill::after {
+    content: '90%';
+}
+
 .resume .container .col .skl .c .fill {
     width: 85%;
     height: 45px;
     background-color: #313131;
+}
+
+.resume .container .col .skl .c .fill::after {
+    content: '85%';
 }
 
 .resume .container .col .skl .cs .fill {
@@ -361,16 +393,27 @@ hr {
     background-color: #313131;
 }
 
+.resume .container .col .skl .cs .fill::after {
+    content: '70%';
+}
+
 .resume .container .col .skl .j .fill {
     width: 20%;
     height: 45px;
     background-color: #313131;
 }
 
+.resume .container .col .skl .j .fill::after {
+    content: '20%';
+}
 .resume .container .col .skl .cp .fill {
     width: 10%;
     height: 45px;
     background-color: #313131;
+}
+
+.resume .container .col .skl .cp .fill::after {
+    content: '10%';
 }
 
 @media (max-width: 767px) {
@@ -452,11 +495,13 @@ hr {
 
 .temp {
     position: relative;
+    overflow: hidden;
+    height: fit-content;
 }
 
 .overlay {
     position: absolute;
-    top: 0;
+    top: 100%;
     left: 0;
     background-color: rgba(0, 0, 0, 0.774);
     width: 100%;
@@ -465,11 +510,10 @@ hr {
     display: flex;
     flex-direction: column;
     padding: 30px;
-    display: none;
 }
 
 .temp:hover .overlay {
-    display: flex;
+    top: 0;
 }
 
 .overlay p {
