@@ -208,6 +208,12 @@
 
 /*-----------------------------------------------------------------End about-----------------------------------------------------------------*/
 
+@media (max-width: 767px) {
+    .resume .edu {
+        text-align: center;
+    }
+}
+
 .resume .container h2 {
     width: 100%;
     color: #313131;
@@ -228,16 +234,22 @@
 
 .resume .container .col {
     display: flex;
-    gap: 30px;
-    flex-direction: column;
+    gap: 100px;
     position: relative;
-    padding:0 10%;
     left: 50%;
     transform: translate(-50%, 0%);
     -webkit-transform: translate(-50%, 0%);
     -moz-transform: translate(-50%, 0%);
     -ms-transform: translate(-50%, 0%);
     -o-transform: translate(-50%, 0%);
+}
+
+@media (max-width: 767px) {
+    .resume .container .col {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
 }
 
 hr {
@@ -247,14 +259,57 @@ hr {
 }
 
 .resume .container span {
-    border-bottom: 3px solid var(--main-color);
     font-size: 23px;
-    width: fit-content;
+    width: 132.7px;
     color: #313131;
     font-weight: 600;
     text-transform: uppercase;
-    text-align: center;
-    align-self: center;
+    padding-top: 35px;
+    position: relative;
+}
+
+@media (max-width: 767px) {
+    .resume .container span {
+        text-align: center;
+        padding: 0;
+    }
+}
+
+.resume .container span::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+@media (max-width: 767px) {
+    .resume .container span::after {
+        top: 25px;
+    }
+}
+
+.resume .container .col:last-of-type span::after {
+    width: 55%;
+}
+
+@media (max-width: 767px) {
+    .resume .container .col:last-of-type span::after  {
+        left: 50%;
+        transform: translate(-50%);
+    }
+}
+
+.resume .container .col .skl {
+    flex: 1;
+}
+
+@media (max-width: 767px) {
+    .resume .container .col .skl {
+        width: 100%;
+    }
 }
 
 .resume .container .col .skl div {
@@ -319,17 +374,8 @@ hr {
 }
 
 @media (max-width: 767px) {
-
-    .resume .container {
-        display: flex;
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, 0%);
-    }
-
     .resume .container .col {
-        padding:0;
+        padding: 0;
     }
 
     
