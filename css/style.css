@@ -34,11 +34,6 @@
 .header li:hover {
     color: var(--main-color);
     padding: 0 15px;
-
-}
-
-@media (max-width: 767px) {
-
 }
 
 .home {
@@ -179,12 +174,24 @@
     }
 }
 
+@media (max-width: 767px) {
+    .about .container .col .text {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
 .about .container .col p {
     color: #7a7a7a;
-    width: 80%;
     word-spacing: 1.9px;
     line-height: 1.9;
     font-size: 15px;
+}
+
+@media (min-width: 768px) {
+    .about .container .col p {
+        width: 80%;
+    }
 }
 
 .about .container .col div:nth-child(2) p {
@@ -572,7 +579,7 @@ hr {
     }
 
     .contact .container {
-        padding: 80px 30px;
+        padding: 80px 15px;
     }
 
     .contact label {
