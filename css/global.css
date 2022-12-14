@@ -8,6 +8,7 @@ html {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    background: #0f0f0f;
 }
 
 .container {
@@ -15,6 +16,11 @@ body {
     margin-right: auto;
     padding: 80px 15px;
 
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
 }
 
 /* Small */
