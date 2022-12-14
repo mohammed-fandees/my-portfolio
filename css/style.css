@@ -37,7 +37,7 @@
 }
 
 .home {
-    background: url(../images/header-background.jpg);
+    background: url(../images/header-background.avif);
     background-size: cover;
     height: calc(100vh - 47.8px);
     width: 100%;
