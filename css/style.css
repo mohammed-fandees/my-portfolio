@@ -33,7 +33,6 @@
 
 .header li:hover {
     color: var(--main-color);
-    padding: 0 15px;
 }
 
 .home {
