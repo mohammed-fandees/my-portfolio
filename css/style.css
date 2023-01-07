@@ -401,22 +401,22 @@ hr {
 }
 
 .resume .container .col .skl .j .fill {
-    width: 20%;
+    width: 65%;
     height: 45px;
     background-color: #313131;
 }
 
 .resume .container .col .skl .j .fill::after {
-    content: '20%';
+    content: '65%';
 }
-.resume .container .col .skl .cp .fill {
-    width: 10%;
+.resume .container .col .skl .tt .fill {
+    width: 85%;
     height: 45px;
     background-color: #313131;
 }
 
-.resume .container .col .skl .cp .fill::after {
-    content: '10%';
+.resume .container .col .skl .tt .fill::after {
+    content: '65 WPM';
 }
 
 @media (max-width: 767px) {
