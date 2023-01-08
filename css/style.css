@@ -1,7 +1,7 @@
 .header {
     position: sticky;
     top: 0;
-    z-index: 4;
+    z-index: 100;
 }
 
 .header ul {
@@ -38,7 +38,7 @@
 .home {
     background: url(../images/header-background.avif);
     background-size: cover;
-    height: calc(100vh - 47.8px);
+    height: 100vh;
     width: 100%;
     background-repeat: no-repeat;
     position: relative;
@@ -552,7 +552,7 @@ hr {
     display: flex;
 }
 
-.contact .row .cont form:first-of-type {
+.contact .row .cont div:first-of-type {
     display: flex;
     padding-top: 18px;
     gap: 78px;
@@ -592,21 +592,12 @@ hr {
     resize: none;
 }
 
-.contact input:focus, textarea:focus {
-    background-color: var(--main-color);
-}
-
 .contact input::placeholder, textarea::placeholder {
     font-weight: 100;
     font-size: 15px;
 }
 
-.contact input:focus::placeholder, textarea:focus::placeholder {
-    color: #fff;
-
-}
-
-.contact input[type=button] {
+.contact input[type=submit] {
     width: 100px;
     color: #fff;
     font-weight: 800;
@@ -622,7 +613,7 @@ hr {
     -o-border-radius: 3px;
 }
 
-.contact input[type=button]:hover {
+.contact input[type=subimt]:hover {
     background-color: #fff;
     color: #0f0f0f;
 }
