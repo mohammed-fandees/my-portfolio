@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio - Contact</title>
+        <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+        <!-- Style -->
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/master.css">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <nav class="container">
+                <img class="logo" src="imgs/logo.png" alt="logo">
+                <div id="dropdown-icon" class="icon"><span></span><span></span><span></span></div>
+                <ul class="list">
+                    <div class="head">
+                        <img class="logo" src="imgs/logo.png" alt="logo">
+                        <i id="close" class="fa-solid fa-x"></i>
+                    </div>
+                    <div class="links">
+                        <li><a text-cont="home" href="index.html">home</a></li>
+                        <li><a text-cont="about" href="about.html">about</a></li>
+                        <li><a text-cont="blog" href="blog.html">blog</a></li>
+                        <li><a text-cont="portfolio" href="portfolio.html">portfolio</a></li>
+                        <li><a text-cont="contact" href="contact.html">contact</a></li>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="contact">
+            <div class="title">
+                <h2>Contact <span>Me</span></h2>
+                <p><span>Get</span> In Touch.</p>
+            </div>
+            <div class="container">
+                <form>
+                    <h4>Message Me</h4>
+                    <div>
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <input type="email" name="email" id="email" placeholder="Email">
+                    </div>
+                    <input type="text" name="subject" placeholder="Subject" id="subject">
+                    <textarea name="message" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
+                    <input type="submit" id="send" value="Submit">
+                </form>
+                <div class="details">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>
+                            <img src="imgs/icon-name.png" alt="name">
+                            <p>Name
+                                <span>Mohammed Fandees</span>
+                            </p>
+                        </li>
+                        <li>
+                            <img src="imgs/icon-location.png" alt="location">
+                            <p>Location
+                                <span>Monofia, Egypt</span>
+                            </p>
+                        </li>
+                        <li>
+                            <img src="imgs/icon-phone.png" alt="phone">
+                            <p>Call
+                                <span>+20 106 485 7869</span>
+                            </p>
+                        </li>
+                        <li>
+                            <img src="imgs/icon-email.png" alt="email">
+                            <p>Name
+                                <span>mohammed.fandees@gmail.com</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer>2023 &copy; <a href="https://www.github.com/mohammed-fandees/" target="_blank">Mo.Fandees</a></footer>
+        <!-- JS -->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function(){
+                emailjs.init("07Nn38ayRbgjjo0R2");
+            })();
+        </script>
+        <script src="js/master.js"></script>
+    </body>
+</html>
