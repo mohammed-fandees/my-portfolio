@@ -588,6 +588,20 @@ h1 {
 }
 
 /* About */
+/* Blog */
+
+.blog .container {
+    font-size: 50px;
+    color: var(--main-tc);
+    opacity: 0.1;
+    height: calc(100vh - 248.14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 200;
+}
+
+/* Blog */
 /* Portfolio */
 
 .port .container{
