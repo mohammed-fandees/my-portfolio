@@ -1,5 +1,9 @@
 // Send Mail
 
+(function () {
+  emailjs.init("07Nn38ayRbgjjo0R2");
+})();
+
 let send = document.querySelector("#send");
 
 send.onclick = (el) => {
@@ -14,17 +18,16 @@ function sendMail() {
     subject: document.getElementById("subject").value,
     message: document.getElementById("msg").value,
   };
+  const {name: n, email: e, subject: s, message: m} = params;
 
   let serviceID = "service_sbzm0y9";
   let templateID = "template_yj9dach";
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then((res) => {
-      params.name = "";
-      params.email = "";
-      params.subject = "";
-      params.message = "";
+  emailjs.send(serviceID, templateID, params).then((res) => {
+      n = "";
+      e = "";
+      s = "";
+      m = "";
       console.log(res);
       alert("Your Message send successfully!");
     })
@@ -39,16 +42,17 @@ const inputs = {
   subject: document.querySelector("#subject"),
   message: document.querySelector("#msg"),
 };
+const {name: n, email: e, subject: s, message: m} = inputs;
 
-inputs.name.oninput = (_) => sessionStorage.setItem("name", inputs.name.value);
-inputs.email.oninput = (_) =>
-  sessionStorage.setItem("email", inputs.email.value);
-inputs.subject.oninput = (_) =>
-  sessionStorage.setItem("subject", inputs.subject.value);
-inputs.message.oninput = (_) =>
-  sessionStorage.setItem("message", inputs.message.value);
+n.oninput = _ => sessionStorage.setItem("name", n.value);
+e.oninput = _ =>
+  sessionStorage.setItem("email", e.value);
+s.oninput = _ =>
+  sessionStorage.setItem("subject", s.value);
+m.oninput = _ =>
+  sessionStorage.setItem("message", m.value);
 
-inputs.name.value = sessionStorage.getItem("name");
-inputs.email.value = sessionStorage.getItem("email");
-inputs.subject.value = sessionStorage.getItem("subject");
-inputs.message.value = sessionStorage.getItem("message");
+n.value = sessionStorage.getItem("name");
+e.value = sessionStorage.getItem("email");
+s.value = sessionStorage.getItem("subject");
+m.value = sessionStorage.getItem("message");
