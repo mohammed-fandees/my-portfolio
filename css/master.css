@@ -58,6 +58,12 @@ ul {
     margin-right: auto;
 }
 
+@media (min-width: 1400px) {
+    .container {
+        width: 1240px;
+    }
+}
+
 @media (max-width: 650px) {
     .container {
         padding: 0 15px 30px;
