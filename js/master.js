@@ -97,7 +97,9 @@ const {one: c1, two: c2, three: c3, four: c4, five: c5, six: c6, root: r} = colo
 // Show & height settings  
 gear.onclick = _ => settings.classList.toggle('show');
 
-
+if(localStorage.getItem('color') === null) {
+	onload = _ => r.style.setProperty('--main-color', '#c70039')
+}
 
 c1.onclick = _ => {
 	let current = c1.getAttribute('color');
