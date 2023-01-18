@@ -266,13 +266,6 @@ nav {
     height: 100vh;
 }
 
-
-@media (max-width: 767px) {
-    .home {
-        height: calc(100vh - 70px);
-    }
-}
-
 .man {
     height: 100%;
     width: auto;
