@@ -78,3 +78,61 @@ window.onload = function() {
 	css.innerHTML = '.typewrite > .wrap { border-right: 0.08em solid #fff}';
 	document.body.appendChild(css);
 };
+
+// Change Color
+
+let gear = document.querySelector('#gear');
+let settings = document.querySelector('.settings');
+
+let colors = {
+	one: document.querySelector('#one'),
+	two: document.querySelector('#two'),
+	three: document.querySelector('#three'),
+	four: document.querySelector('#four'),
+	five: document.querySelector('#five'),
+	six: document.querySelector('#six'),
+	root: document.querySelector(':root')
+};
+const {one: c1, two: c2, three: c3, four: c4, five: c5, six: c6, root: r} = colors;
+// Show & height settings  
+gear.onclick = _ => settings.classList.toggle('show');
+
+
+
+c1.onclick = _ => {
+	let current = c1.getAttribute('color');
+	localStorage.setItem('color', current);
+	r.style.setProperty('--main-color', localStorage.getItem('color'));
+}
+
+c2.onclick = _ => {
+	let current = c2.getAttribute('color');
+	localStorage.setItem('color', current);
+	r.style.setProperty('--main-color', localStorage.getItem('color'));
+}
+
+c3.onclick = _ => {
+	let current = c3.getAttribute('color');
+	localStorage.setItem('color', current);
+	r.style.setProperty('--main-color', localStorage.getItem('color'));
+}
+
+c4.onclick = _ => {
+	let current = c4.getAttribute('color');
+	localStorage.setItem('color', current);
+	r.style.setProperty('--main-color', localStorage.getItem('color'));
+}
+
+c5.onclick = _ => {
+	let current = c5.getAttribute('color');
+	localStorage.setItem('color', current);
+	r.style.setProperty('--main-color', localStorage.getItem('color'));
+}
+
+c6.onclick = _ => {
+	let current = c6.getAttribute('color');
+	localStorage.setItem('color', current);
+	r.style.setProperty('--main-color', localStorage.getItem('color'));
+}
+
+r.style.setProperty('--main-color', localStorage.getItem('color'));
