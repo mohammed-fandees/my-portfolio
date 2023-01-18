@@ -133,8 +133,8 @@ nav {
 }
 
 .logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   opacity: .7;
   transition: var(--main-transition) ease-in-out;
 }
@@ -156,7 +156,7 @@ nav {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  width: 50px;
+  width: 45px;
   height: 24px;
   cursor: pointer;
 }
@@ -445,7 +445,7 @@ h1 {
   transition: all 600ms;
 }
 
-.serv .card:hover>.i img {
+.serv .card:hover >.i img {
   box-shadow: 0 0 0 450px var(--main-color);
 
 }
@@ -465,6 +465,11 @@ h1 {
   font-size: 18px;
   color: var(--main-tc);
   opacity: .8;
+  transition: var(--main-transition);
+}
+
+.serv .card:hover > p {
+  opacity: 1;
 }
 
 .skills {
@@ -617,25 +622,30 @@ h1 {
   overflow: hidden;
 }
 
-.port .work img {
-  width: 25%;
-  height: auto;
+.port .work i {
+  width: 250px;
+  height: 250px;
+  background-color: var(--main-color);
+  font-size: 80px;
+  color: var(--main-tc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .port .work .desc {
   background: #080808;
   color: var(--main-tc);
   padding: 20px;
-  width: 70%;
   flex: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .port .work {
     flex-direction: column;
   }
 
-  .port .work img {
+  .port .work i {
     width: 100%;
   }
 
@@ -655,9 +665,14 @@ h1 {
   font-weight: 400;
 }
 
+@media (max-width: 500px) {
+  .port .work .desc h4 {
+    text-align: center;
+  }
+}
+
 .port .work .desc p {
   opacity: .8;
-  width: 70%;
   margin: 0 0 20px;
 }
 
@@ -676,9 +691,9 @@ h1 {
   transition: 700ms ease;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 767px) {
   .port .work .desc p {
-    width: 100%;
+    text-align: center;
   }
 
   .port .desc a {
@@ -740,12 +755,13 @@ h1 {
 }
 
 .contact h4 {
-  padding: 25px 25px 10px;
+  padding: 25px 10px 10px;
   margin: 0;
   text-align: center;
   font-size: 24px;
   color: var(--main-tc);
   font-weight: 400;
+  z-index: 2;
 }
 
 .contact input {
@@ -837,10 +853,13 @@ textarea {
   align-items: center;
 }
 
+.contact .details li:last-of-type {
+  padding-bottom: 25px;
+}
+
 @media (max-width: 400px) {
   .contact .details li {
     flex-direction: column;
-
   }
 }
 
@@ -864,11 +883,20 @@ textarea {
   }
 }
 
-.contact .details li span {
+.contact .details li span,
+.contact .details li a {
   color: var(--main-tc);
   font-weight: 400;
   opacity: .8;
   font-size: 14px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.contact .details li a {
+  cursor: pointer;
 }
 
 /* Contact */
