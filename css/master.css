@@ -32,6 +32,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -121,12 +122,6 @@ footer a {
   align-items: flex-start;
   z-index: 30;
   transition: .3s ease-out;
-}
-
-@media (max-width: 767px) {
-  .settings {
-    display: none;
-  }
 }
 
 .show {
