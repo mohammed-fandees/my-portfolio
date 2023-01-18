@@ -11,11 +11,11 @@ exit.onclick = (_) => (list.style.cssText = 'transform: translateY(-100%)');
 
 let header = document.querySelector('header');
 onscroll = _ => {
-    if(window.scrollY >= 50) {
-        header.style.background = "#101010";
-    } else {
-        header.style.background = "transparent";
-    }
+   if(window.scrollY >= 50) {
+      header.style.background = "#101010";
+   } else {
+      header.style.background = "transparent";
+   }
 }
 
 // Typewrite effect on home page
