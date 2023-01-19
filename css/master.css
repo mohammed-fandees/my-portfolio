@@ -930,6 +930,18 @@ textarea {
   border-radius: 5px;
   transition: 1s ease;
   cursor: pointer;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0 var(--main-color);
+  transition: var(--main-transition);
+}
+
+.contact input[type=submit]:hover {
+  border-color: #101010;
+  box-shadow: 0 0 0 2px var(--main-color);
+}
+
+.contact input[type=submit]:active {
+  scale: .9;
 }
 
 .contact .details {
