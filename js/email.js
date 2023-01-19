@@ -18,19 +18,18 @@ function sendMail() {
     subject: document.getElementById("subject").value,
     message: document.getElementById("msg").value,
   };
-  const {name: n, email: e, subject: s, message: m} = params;
-
+  
   let serviceID = "service_sbzm0y9";
   let templateID = "template_yj9dach";
-
+  
   emailjs.send(serviceID, templateID, params).then((res) => {
-      n = "";
-      e = "";
-      s = "";
-      m = "";
+      params.name = "";
+      params.email = "";
+      params.subject = "";
+      params.message = "";
       console.log(res);
       Swal.fire({
-        position: 'center-center',
+        position: 'center',
         icon: 'success',
         title: 'Your message has been sent',
         showConfirmButton: false,

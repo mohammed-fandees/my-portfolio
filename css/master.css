@@ -566,7 +566,7 @@ h1 {
   transition: all 600ms;
 }
 
-.serv .card:hover >.i img {
+.serv .card:hover>.i img {
   box-shadow: 0 0 0 450px var(--main-color);
 
 }
@@ -589,7 +589,7 @@ h1 {
   transition: var(--main-transition);
 }
 
-.serv .card:hover > p {
+.serv .card:hover>p {
   opacity: 1;
 }
 
@@ -629,7 +629,7 @@ h1 {
   background: var(--main-color);
   border-radius: 10px;
   position: relative;
-  transition:  var(--main-transition);
+  transition: var(--main-transition);
 }
 
 .skills .fill::after {
@@ -753,7 +753,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition:  var(--main-transition);
+  transition: var(--main-transition);
 }
 
 .port .work .desc {
@@ -1025,7 +1025,6 @@ textarea {
 .swal2-styled {
   background: var(--main-color) !important;
   box-shadow: none !important;
-  width: 70px !important;
 }
 
 /* Contact */
