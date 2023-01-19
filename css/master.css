@@ -389,10 +389,14 @@ nav {
   z-index: 20;
 }
 
+.float a {
+  color: var(--main-tc);
+  cursor: pointer;
+}
+
 .float i {
   transition: var(--main-transition);
   opacity: .8;
-  cursor: pointer;
 }
 
 .float i:hover {
