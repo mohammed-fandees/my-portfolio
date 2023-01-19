@@ -29,9 +29,22 @@ function sendMail() {
       s = "";
       m = "";
       console.log(res);
-      alert("Your Message send successfully!");
+      Swal.fire({
+        position: 'center-center',
+        icon: 'success',
+        title: 'Your message has been sent',
+        showConfirmButton: false,
+        timer: 2000
+      });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      console.log(err);
+      Swal.fire({
+        icon: 'error',
+        title: 'Faild to send',
+        text: 'Something went wrong!',
+      });
+    });
 }
 
 // save inputs in sesstion storage
