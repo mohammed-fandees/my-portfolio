@@ -71,9 +71,13 @@ ul {
   }
 }
 
-
 /* End Global Ruls */
 /* Component */
+
+input[type=submit]:active,
+button:active {
+  scale: .9;
+}
 
 .title {
   text-align: center;
@@ -938,10 +942,6 @@ textarea {
 .contact input[type=submit]:hover {
   border-color: #101010;
   box-shadow: 0 0 0 2px var(--main-color);
-}
-
-.contact input[type=submit]:active {
-  scale: .9;
 }
 
 .contact .details {
