@@ -310,6 +310,12 @@ nav {
   font-size: 30px;
   color: var(--main-tc);
   cursor: pointer;
+  opacity: .7;
+  transition: var(--main-transition);
+}
+
+.list i:hover {
+  opacity: 1;
 }
 
 .list .links {
