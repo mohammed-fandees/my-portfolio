@@ -47,6 +47,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  line-height: 1.7;
+}
+
 ul {
   list-style: none;
   margin: 0;
@@ -73,6 +77,18 @@ ul {
 
 /* End Global Ruls */
 /* Component */
+
+.overload {
+  position: absolute;
+    background: var(--main-color);
+    width: 135%;
+    height: 100%;
+    z-index: 10000;
+    transform: skewX(-10deg);
+    /* transform: translateX(-50%); */
+    left: -250%;
+    transition: all 3s cubic-bezier(0.14, 0, 0.7, 1.06);
+}
 
 input[type=submit]:active,
 button:active {
@@ -675,11 +691,11 @@ h1 {
 
 /* JS */
 .skills .skill:nth-child(3) .fill {
-  width: 65%;
+  width: 80%;
 }
 
 .skills .skill:nth-child(3) .fill::after {
-  content: '65%';
+  content: '80%';
 }
 
 /* git */
@@ -916,13 +932,20 @@ textarea {
   color: var(--main-tc);
 }
 
+.contact form content {
+  display: grid;
+  gap: 15px;
+  flex: 1;
+}
+
+.sweet-alert {
+  display: none !important;
+  color: #e52214;
+}
+
 .contact form div {
   display: flex;
   gap: 15px;
-}
-
-.contact form div input {
-  flex: 1;
 }
 
 @media (max-width: 540px) {
