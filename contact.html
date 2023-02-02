@@ -22,6 +22,7 @@
     </head>
 
     <body>
+        <div class="overload"></div>
         <div class="settings">
             <div class="box-icon" id="gear">
                 <img src="imgs/gear.png" alt="gear" class="gear">
@@ -66,11 +67,20 @@
                 <form>
                     <h4>Message Me</h4>
                     <div>
-                        <input type="text" name="name" id="name" placeholder="Name">
-                        <input type="email" name="email" id="email" placeholder="Email">
+                        <content>
+                            <input type="text" name="name" id="name" placeholder="Name">
+                            <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> Name is required</div>
+                        </content>
+                        <content>
+                            <input type="email" name="email" id="email" placeholder="Email">
+                            <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email</div>
+                        </content>
                     </div>
                     <input type="text" name="subject" placeholder="Subject" id="subject">
-                    <textarea name="message" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
+                    <content>
+                        <textarea name="message" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
+                        <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> You must be write a message</div>
+                    </content>
                     <input type="submit" id="send" value="Submit">
                 </form>
                 <div class="details">

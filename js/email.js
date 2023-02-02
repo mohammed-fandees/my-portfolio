@@ -6,11 +6,6 @@
 
 let send = document.querySelector("#send");
 
-send.onclick = (el) => {
-  el.preventDefault();
-  sendMail();
-};
-
 function sendMail() {
   const params = {
     name: document.getElementById("name").value,
@@ -68,3 +63,21 @@ n.value = sessionStorage.getItem("name");
 e.value = sessionStorage.getItem("email");
 s.value = sessionStorage.getItem("subject");
 m.value = sessionStorage.getItem("message");
+
+
+let sweetAlert = document.querySelectorAll('.sweet-alert');
+let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+send.onclick = (el) => {
+  el.preventDefault();
+
+  sweetAlert.forEach(msg => {
+    
+  });
+
+  if (n.value === "" && e.value.match(validRegex) && m.value === "") {
+    sweetAlert.forEach(msg => msg.style.cssText = 'display: block !important');
+  } else {
+    sendMail();
+  }
+};

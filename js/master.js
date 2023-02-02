@@ -1,3 +1,7 @@
+// Overload effect
+
+window.addEventListener('load', _ => document.querySelector('.overload').style.left = '250% !important');
+
 // Drop down list
 
 let down = document.querySelector('#dropdown-icon'),
