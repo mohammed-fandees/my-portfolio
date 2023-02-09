@@ -78,18 +78,6 @@ ul {
 /* End Global Ruls */
 /* Component */
 
-.overload {
-  position: absolute;
-    background: var(--main-color);
-    width: 135%;
-    height: 100%;
-    z-index: 10000;
-    transform: skewX(-10deg);
-    /* transform: translateX(-50%); */
-    left: -250%;
-    transition: all 3s cubic-bezier(0.14, 0, 0.7, 1.06);
-}
-
 input[type=submit]:active,
 button:active {
   scale: .9;
