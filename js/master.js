@@ -66,3 +66,14 @@ document.querySelectorAll(".settings ul li").forEach((color) =>
     change.changeColor();
   })
 );
+
+class Year {
+	constructor(element) {
+		this.el = element;
+	}
+
+	date() {
+		this.el.innerHTML = new Date().getFullYear();
+	}
+}
+new Year(document.querySelector('year')).date();
