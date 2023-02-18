@@ -1,22 +1,16 @@
-// Send Mail
-
 (function () {
   emailjs.init("07Nn38ayRbgjjo0R2");
 })();
 
-let send = document.querySelector("#send");
+const params = {
+  name: document.getElementById("name").value,
+  email: document.getElementById("email").value,
+  subject: document.getElementById("subject").value,
+  message: document.getElementById("msg").value,
+};
+const {name: n, emial: e, subject: s, message: m} = params;
 
-function sendMail() {
-  const params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-    message: document.getElementById("msg").value,
-  };
-  
-  let serviceID = "service_sbzm0y9";
-  let templateID = "template_yj9dach";
-  
+function sendMail(serviceID, templateID) {
   emailjs.send(serviceID, templateID, params).then((res) => {
       params.name = "";
       params.email = "";
@@ -41,43 +35,39 @@ function sendMail() {
     });
 }
 
-// save inputs in sesstion storage
-
-const inputs = {
-  name: document.querySelector("#name"),
-  email: document.querySelector("#email"),
-  subject: document.querySelector("#subject"),
-  message: document.querySelector("#msg"),
-};
-const {name: n, email: e, subject: s, message: m} = inputs;
-
-n.oninput = _ => sessionStorage.setItem("name", n.value);
-e.oninput = _ =>
-  sessionStorage.setItem("email", e.value);
-s.oninput = _ =>
-  sessionStorage.setItem("subject", s.value);
-m.oninput = _ =>
-  sessionStorage.setItem("message", m.value);
-
-n.value = sessionStorage.getItem("name");
-e.value = sessionStorage.getItem("email");
-s.value = sessionStorage.getItem("subject");
-m.value = sessionStorage.getItem("message");
-
-
-let sweetAlert = document.querySelectorAll('.sweet-alert');
 let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
-send.onclick = (el) => {
+document.querySelector("#send")
+.addEventListener('click', el => {
   el.preventDefault();
+  if (n.value === "" && e.value.match(validRegex) && m.value === "") 
+    document.querySelectorAll('.sweet-alert').forEach(msg => msg.style.cssText = 'display: block !important');
+  else sendMail("service_sbzm0y9", "template_yj9dach");
+});
 
-  sweetAlert.forEach(msg => {
-    
-  });
+// save inputs in sesstion storage
 
-  if (n.value === "" && e.value.match(validRegex) && m.value === "") {
-    sweetAlert.forEach(msg => msg.style.cssText = 'display: block !important');
-  } else {
-    sendMail();
+class Storage {
+  constructor(inputs) {
+    this.inputs = inputs;
   }
-};
+
+  save() {
+    this.inputs.forEach(input => {
+      input.addEventListener('input', _ => {
+        sessionStorage.setItem(input.getAttribute('name'), input.value);
+      });
+    
+      input.value = sessionStorage.getItem(input.getAttribute('name'));
+    });
+  }
+}
+
+new Storage(
+  [
+    document.querySelector("#name"),
+    document.querySelector("#email"),
+    document.querySelector("#subject"),
+    document.querySelector("#msg")
+  ]
+).save();

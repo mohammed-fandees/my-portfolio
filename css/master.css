@@ -19,10 +19,6 @@
   transition: all 1s ease;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  width: 4px;
-}
-
 :root {
   --footer-bg: #080808;
   --wedgets-bg: #191919;

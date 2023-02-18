@@ -1,100 +1,68 @@
-// Drop down list
+class Dropdown {
+  constructor(list, header) {
+    this.list = list;
+    this.header = header;
+  }
 
-let down = document.querySelector('#dropdown-icon'),
-	exit = document.querySelector('#close'),
-	list = document.querySelector('.list');
+  down() {
+    this.list.style.cssText = "transform: translateY(0)";
+  }
 
-down.onclick = (_) => (list.style.cssText = 'transform: translateY(0)');
-exit.onclick = (_) => (list.style.cssText = 'transform: translateY(-100%)');
+  up() {
+    this.list.style.cssText = "transform: translateY(-100%)";
+  }
 
-// Header style
-
-let header = document.querySelector('header');
-onscroll = _ => {
-    if(window.scrollY >= 50) {
-        header.style.background = "#101010";
-    } else {
-        header.style.background = "transparent";
-    }
+  scroll() {
+    if (window.scrollY >= 50) this.header.style.background = "#101010";
+    else this.header.style.background = "transparent";
+  }
 }
 
-// Typewrite effect on home page
+let menu = new Dropdown(
+  document.querySelector(".list"),
+  document.querySelector("header")
+);
 
-let TxtType = function(el, toRotate, period) {
-	this.toRotate = toRotate;
-	this.el = el;
-	this.loopNum = 0;
-	this.period = parseInt(period, 10) || 2000;
-	this.txt = '';
-	this.tick();
-	this.isDeleting = false;
-};
+document
+  .querySelector("#dropdown-icon")
+  .addEventListener("click", _ => menu.down());
+document.querySelector("#close").addEventListener("click", _ => menu.up());
 
-TxtType.prototype.tick = function() {
-	let i = this.loopNum % this.toRotate.length;
-	let fullTxt = this.toRotate[i];
-
-	if (this.isDeleting) {
-		this.txt = fullTxt.substring(0, this.txt.length - 1);
-	} else {
-		this.txt = fullTxt.substring(0, this.txt.length + 1);
-	}
-
-	this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-	let that = this;
-	let delta = 200 - Math.random() * 100;
-
-	if (this.isDeleting) {
-		delta /= 2;
-	}
-
-	if (!this.isDeleting && this.txt === fullTxt) {
-		delta = this.period;
-		this.isDeleting = true;
-	} else if (this.isDeleting && this.txt === '') {
-		this.isDeleting = false;
-		this.loopNum++;
-		delta = 200;
-	}
-
-	setTimeout(function() {
-		that.tick();
-	}, delta);
-};
-
-window.onload = function() {
-	let elements = document.getElementsByClassName('typewrite');
-	for (let i = 0; i < elements.length; i++) {
-		let toRotate = elements[i].getAttribute('data-type');
-		let period = elements[i].getAttribute('data-period');
-		if (toRotate) {
-			new TxtType(elements[i], JSON.parse(toRotate), period);
-		}
-	}
-	// INJECT CSS
-	let css = document.createElement('style');
-	css.type = 'text/css';
-	css.innerHTML = '.typewrite > .wrap { border-right: 0.08em solid #fff}';
-	document.body.appendChild(css);
-};
+onscroll = _ => menu.scroll();
 
 // Change Color
 
-let gear = document.querySelector('#gear');
-let settings = document.querySelector('.settings');
+class Color {
+  constructor(settings, root) {
+    this.settings = settings;
+    this.root = root;
+  }
 
-let colors = document.querySelectorAll('.settings ul li');
-let root = document.querySelector(':root');
+  openSettings() {
+    this.settings.classList.toggle("show");
+  }
 
-// Show & hide settings  
-gear.onclick = _ => settings.classList.toggle('show');
+  changeColor() {
+    this.root.style.setProperty(
+      "--main-color",
+      localStorage.getItem("main-color") || "#c70039"
+    );
+  }
+}
 
-root.style.setProperty('--main-color', localStorage.getItem('main-color') || '#c70039');
+let change = new Color(
+  document.querySelector(".settings"),
+  document.querySelector(":root")
+);
 
-colors.forEach(color => {
-	color.addEventListener('click', function() {
-		localStorage.setItem('main-color', this.getAttribute('color'));
-		root.style.setProperty('--main-color', localStorage.getItem('main-color') || '#c70039');
-	});
-});
+onload = change.changeColor();
+
+document
+  .querySelector("#gear")
+  .addEventListener("click", _ => change.openSettings());
+document.querySelectorAll(".settings ul li").forEach((color) =>
+  color.addEventListener("click", _ => {
+    localStorage.setItem("main-color", color.getAttribute("color"));
+    change.changeColor();
+  })
+);
