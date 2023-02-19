@@ -1,5 +1,16 @@
+const fs = require('fs');
+const yaml = require('js-yaml');
+
+try {
+    let fileContents = fs.readFileSync('./config.yaml', 'utf8');
+    let data = yaml.safeLoad(fileContents);
+    console.log(data);
+} catch (e) {
+    console.log(e);
+}
+
 (function () {
-  emailjs.init("07Nn38ayRbgjjo0R2");
+  emailjs.init(data.code.privateCode);
 })();
 
 const params = {
@@ -42,7 +53,7 @@ document.querySelector("#send")
   el.preventDefault();
   if (n.value === "" && e.value.match(validRegex) && m.value === "") 
     document.querySelectorAll('.sweet-alert').forEach(msg => msg.style.cssText = 'display: block !important');
-  else sendMail("service_sbzm0y9", "template_yj9dach");
+  else sendMail(data.code.serviceID, data.code.templateID);
 });
 
 // save inputs in sesstion storage
