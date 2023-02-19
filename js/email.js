@@ -10,7 +10,7 @@ try {
 }
 
 (function () {
-  emailjs.init(data.code.privateCode);
+  emailjs.init('07Nn38ayRbgjjo0R2');
 })();
 
 const params = {
@@ -53,7 +53,7 @@ document.querySelector("#send")
   el.preventDefault();
   if (n.value === "" && e.value.match(validRegex) && m.value === "") 
     document.querySelectorAll('.sweet-alert').forEach(msg => msg.style.cssText = 'display: block !important');
-  else sendMail(data.code.serviceID, data.code.templateID);
+  else sendMail('service_sbzm0y9', 'template_yj9dach');
 });
 
 // save inputs in sesstion storage
