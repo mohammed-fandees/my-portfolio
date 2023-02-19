@@ -1,14 +1,3 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
-
-try {
-    let fileContents = fs.readFileSync('./config.yaml', 'utf8');
-    let data = yaml.safeLoad(fileContents);
-    console.log(data);
-} catch (e) {
-    console.log(e);
-}
-
 (function () {
   emailjs.init('07Nn38ayRbgjjo0R2');
 })();
