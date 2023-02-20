@@ -1,135 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio</title>
-        <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
-        <!-- Style -->
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/master.css">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="settings">
-            <div class="box-icon" id="gear">
-                <img src="imgs/gear.png" alt="gear" class="gear">
-            </div>
-            <div class="box">
-                <h4>Custom Colors</h4>
-                <ul>
-                    <li color="#c70039" id="one"></li>
-                    <li color="#481380" id="two"></li>
-                    <li color="#00909e" id="three"></li>
-                    <li color="#04A777" id="four"></li>
-                    <li color="#035aa6" id="five"></li>
-                    <li color="#dd7631" id="six"></li>
-                </ul>
-            </div>
-        </div>
-        <header>
-            <nav class="container">
-                <img class="logo" src="imgs/logo.png" alt="logo">
-                <div id="dropdown-icon" class="icon"><span></span><span></span><span></span></div>
-                <ul class="list">
-                    <div class="head">
-                        <img class="logo" src="imgs/logo.png" alt="logo">
-                        <i id="close" class="fa-solid fa-x"></i>
-                    </div>
-                    <div class="links">
-                        <li><a text-cont="home" href="index.html">home</a></li>
-                        <li><a text-cont="about" href="about.html">about</a></li>
-                        <li><a text-cont="blog" href="blog.html">blog</a></li>
-                        <li><a text-cont="portfolio" href="portfolio.html">portfolio</a></li>
-                        <li><a text-cont="contact" href="contact.html">contact</a></li>
-                    </div>
-                </ul>
-            </nav>
-        </header>
 
-        <section class="port">
-            <div class="title">
-                <h2>My <span>Portfolio</span></h2>
-                <p>Some of my <span>Works <span id="length"></span></span></p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="settings">
+        <div class="box-icon" id="gear">
+            <img src="imgs/gear.png" alt="gear" class="gear">
+        </div>
+        <div class="box">
+            <h4>Custom Colors</h4>
+            <ul>
+                <li color="#c70039" id="one"></li>
+                <li color="#481380" id="two"></li>
+                <li color="#00909e" id="three"></li>
+                <li color="#04A777" id="four"></li>
+                <li color="#035aa6" id="five"></li>
+                <li color="#dd7631" id="six"></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <nav class="container">
+            <img class="logo" src="imgs/logo.png" alt="logo">
+            <div id="dropdown-icon" class="icon"><span></span><span></span><span></span></div>
+            <ul class="list">
+                <div class="head">
+                    <img class="logo" src="imgs/logo.png" alt="logo">
+                    <i id="close" class="fa-solid fa-x"></i>
+                </div>
+                <div class="links">
+                    <li><a text-cont="home" href="index.html">home</a></li>
+                    <li><a text-cont="about" href="about.html">about</a></li>
+                    <li><a text-cont="blog" href="blog.html">blog</a></li>
+                    <li><a text-cont="portfolio" href="portfolio.html">portfolio</a></li>
+                    <li><a text-cont="contact" href="contact.html">contact</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="port">
+        <div class="title">
+            <h2>My <span>Portfolio</span></h2>
+            <p>Some of my <span>Works <span id="length"></span></span>
+            </p>
+        </div>
+        <div class="container">
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>STATED.</h4>
+                    <p>By and sell real estate properties.</p>
+                    <a target="_blank" href="https://stated.vercel.app/">View Project</a>
+                </div>
             </div>
-            <div class="container">
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>STATED.</h4>
-                        <p>By and sell real estate properties.</p>
-                        <a target="_blank" href="https://stated.vercel.app/">View Project</a>
-                    </div>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>Client</h4>
+                    <p>Client Template From Codepin.io</p>
+                    <a target="_blank" href="https://client-ten-livid.vercel.app/">View Project</a>
                 </div>
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>Client</h4>
-                        <p>Client Template From Codepin.io</p>
-                        <a target="_blank" href="https://client-ten-livid.vercel.app/">View Project</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>Leon</h4>
-                        <p>We are Leon - Super Creative & Minimal Agency Web Template (Temp 1 - Elzero Web School)</p>
-                        <a target="_blank" href="https://mohammed-fandees.github.io/Leon-Template-One/">View Project</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>Kasper</h4>
-                        <p>We Are Kasper We Make Art. (Temp 2 - Elzero Web School)</p>
-                        <a target="_blank" href="https://mohammed-fandees.github.io/Kasper">View Project</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>Elzero</h4>
-                        <p>Here Iam gonna share everything about my life. (Temp 3 - Elzero Web School)</p>
-                        <a target="_blank" href="https://mohammed-fandees.github.io/Template-three-Elzero/">View Project</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>Wedgets</h4>
-                        <p>The awesome wedgets template (Temp 4 - Elzero Web School)</p>
-                        <a target="_blank" href="https://mohammed-fandees.github.io/Template-Four/">View Project</a>
-                    </div>
-                </div>
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>Huddle</h4>
-                        <p>Build community your fans will love</p>
-                        <a target="_blank" href="http://mohammed-fandees.github.io/Huddle/">View Project</a>
-                    </div>
-                </div>  
-                <div class="work">
-                    <i class="fa-solid fa-diagram-project"></i>
-                    <div class="desc">
-                        <h4>LIBERTY NFT Market</h4>
-                        <p>Liberty NFT Market is a really cool and professional design for your NFT websites</p>
-                        <a target="_blank" href="https://mohammed-fandees.github.io/Liberty-NFT-Market/">View Project</a>
-                    </div>
-                </div>
-                
             </div>
-        </section>
-        <footer><year></year> &copy; <a href="https://www.github.com/mohammed-fandees/" target="_blank">Mo.Fandees</a></footer>
-        <!-- JS -->
-        <script src="js/works.js"></script>
-        <script src="js/master.js"></script>
-    </body>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>Leon</h4>
+                    <p>We are Leon - Super Creative & Minimal Agency Web Template (Temp 1 - Elzero Web School)</p>
+                    <a target="_blank" href="https://mohammed-fandees.github.io/Leon-Template-One/">View Project</a>
+                </div>
+            </div>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>Kasper</h4>
+                    <p>We Are Kasper We Make Art. (Temp 2 - Elzero Web School)</p>
+                    <a target="_blank" href="https://mohammed-fandees.github.io/Kasper">View Project</a>
+                </div>
+            </div>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>Elzero</h4>
+                    <p>Here Iam gonna share everything about my life. (Temp 3 - Elzero Web School)</p>
+                    <a target="_blank" href="https://mohammed-fandees.github.io/Template-three-Elzero/">View Project</a>
+                </div>
+            </div>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>Wedgets</h4>
+                    <p>The awesome wedgets template (Temp 4 - Elzero Web School)</p>
+                    <a target="_blank" href="https://mohammed-fandees.github.io/Template-Four/">View Project</a>
+                </div>
+            </div>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>Huddle</h4>
+                    <p>Build community your fans will love</p>
+                    <a target="_blank" href="http://mohammed-fandees.github.io/Huddle/">View Project</a>
+                </div>
+            </div>
+            <div class="work">
+                <i class="fa-solid fa-diagram-project"></i>
+                <div class="desc">
+                    <h4>LIBERTY NFT Market</h4>
+                    <p>Liberty NFT Market is a really cool and professional design for your NFT websites</p>
+                    <a target="_blank" href="https://mohammed-fandees.github.io/Liberty-NFT-Market/">View Project</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <year></year> &copy; <a href="https://www.github.com/mohammed-fandees/" target="_blank">Mo.Fandees</a>
+    </footer>
+    <!-- JS -->
+    <script src="js/works.js"></script>
+    <script src="js/master.js"></script>
+</body>
+
 </html>

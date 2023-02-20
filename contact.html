@@ -1,124 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio - Contact</title>
-        <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
-        <!-- Style -->
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/master.css">
-        <!-- Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Contact</title>
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/master.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
 
-    <body>
-        <div class="settings">
-            <div class="box-icon" id="gear">
-                <img src="imgs/gear.png" alt="gear" class="gear">
-            </div>
-            <div class="box">
-                <h4>Custom Colors</h4>
+<body>
+    <div class="settings">
+        <div class="box-icon" id="gear">
+            <img src="imgs/gear.png" alt="gear" class="gear">
+        </div>
+        <div class="box">
+            <h4>Custom Colors</h4>
+            <ul>
+                <li color="#c70039" id="one"></li>
+                <li color="#481380" id="two"></li>
+                <li color="#00909e" id="three"></li>
+                <li color="#04A777" id="four"></li>
+                <li color="#035aa6" id="five"></li>
+                <li color="#dd7631" id="six"></li>
+            </ul>
+        </div>
+    </div>
+    <header>
+        <nav class="container">
+            <img class="logo" src="imgs/logo.png" alt="logo">
+            <div id="dropdown-icon" class="icon"><span></span><span></span><span></span></div>
+            <ul class="list">
+                <div class="head">
+                    <img class="logo" src="imgs/logo.png" alt="logo">
+                    <i id="close" class="fa-solid fa-x"></i>
+                </div>
+                <div class="links">
+                    <li><a text-cont="home" href="index.html">home</a></li>
+                    <li><a text-cont="about" href="about.html">about</a></li>
+                    <li><a text-cont="blog" href="blog.html">blog</a></li>
+                    <li><a text-cont="portfolio" href="portfolio.html">portfolio</a></li>
+                    <li><a text-cont="contact" href="contact.html">contact</a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <section class="contact">
+        <div class="title">
+            <h2>Contact <span>Me</span></h2>
+            <p><span>Get</span> In Touch.</p>
+        </div>
+        <div class="container">
+            <form>
+                <h4>Message Me</h4>
+                <div>
+                    <content>
+                        <input type="text" name="name" id="name" placeholder="Name">
+                        <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> Name is required</div>
+                    </content>
+                    <content>
+                        <input type="email" name="email" id="email" placeholder="Email">
+                        <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email
+                        </div>
+                    </content>
+                </div>
+                <input type="text" name="subject" placeholder="Subject" id="subject">
+                <content>
+                    <textarea name="message" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
+                    <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> You must be write a message
+                    </div>
+                </content>
+                <input type="submit" id="send" value="Submit">
+            </form>
+            <div class="details">
+                <h4>Contact Info</h4>
                 <ul>
-                    <li color="#c70039" id="one"></li>
-                    <li color="#481380" id="two"></li>
-                    <li color="#00909e" id="three"></li>
-                    <li color="#04A777" id="four"></li>
-                    <li color="#035aa6" id="five"></li>
-                    <li color="#dd7631" id="six"></li>
+                    <li>
+                        <img src="imgs/icon-name.png" alt="name">
+                        <p>Name
+                            <span>Mohammed Fandees</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="imgs/icon-location.png" alt="location">
+                        <p>Location
+                            <span>Monofia, Egypt</span>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="imgs/icon-phone.png" alt="phone">
+                        <p>Call
+                            <a href="tel:+201064857869">+20 106 485 7869</a>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="imgs/icon-email.png" alt="email">
+                        <p>Email
+                            <a href="mailto:mohammed.fandees@gmail.com">mohammed.fandees@gmail.com</a>
+                        </p>
+                    </li>
                 </ul>
             </div>
         </div>
-        <header>
-            <nav class="container">
-                <img class="logo" src="imgs/logo.png" alt="logo">
-                <div id="dropdown-icon" class="icon"><span></span><span></span><span></span></div>
-                <ul class="list">
-                    <div class="head">
-                        <img class="logo" src="imgs/logo.png" alt="logo">
-                        <i id="close" class="fa-solid fa-x"></i>
-                    </div>
-                    <div class="links">
-                        <li><a text-cont="home" href="index.html">home</a></li>
-                        <li><a text-cont="about" href="about.html">about</a></li>
-                        <li><a text-cont="blog" href="blog.html">blog</a></li>
-                        <li><a text-cont="portfolio" href="portfolio.html">portfolio</a></li>
-                        <li><a text-cont="contact" href="contact.html">contact</a></li>
-                    </div>
-                </ul>
-            </nav>
-        </header>
-        <section class="contact">
-            <div class="title">
-                <h2>Contact <span>Me</span></h2>
-                <p><span>Get</span> In Touch.</p>
-            </div>
-            <div class="container">
-                <form>
-                    <h4>Message Me</h4>
-                    <div>
-                        <content>
-                            <input type="text" name="name" id="name" placeholder="Name">
-                            <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> Name is required</div>
-                        </content>
-                        <content>
-                            <input type="email" name="email" id="email" placeholder="Email">
-                            <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email</div>
-                        </content>
-                    </div>
-                    <input type="text" name="subject" placeholder="Subject" id="subject">
-                    <content>
-                        <textarea name="message" id="msg" cols="30" rows="10" placeholder="Message"></textarea>
-                        <div class="sweet-alert"><i class="fa-solid fa-circle-exclamation"></i> You must be write a message</div>
-                    </content>
-                    <input type="submit" id="send" value="Submit">
-                </form>
-                <div class="details">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>
-                            <img src="imgs/icon-name.png" alt="name">
-                            <p>Name
-                                <span>Mohammed Fandees</span>
-                            </p>
-                        </li>
-                        <li>
-                            <img src="imgs/icon-location.png" alt="location">
-                            <p>Location
-                                <span>Monofia, Egypt</span>
-                            </p>
-                        </li>
-                        <li>
-                            <img src="imgs/icon-phone.png" alt="phone">
-                            <p>Call
-                                <a href="tel:+201064857869">+20 106 485 7869</a>
-                            </p>
-                        </li>
-                        <li>
-                            <img src="imgs/icon-email.png" alt="email">
-                            <p>Email
-                                <a href="mailto:mohammed.fandees@gmail.com">mohammed.fandees@gmail.com</a>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <footer><year></year> &copy; <a href="https://www.github.com/mohammed-fandees/" target="_blank">Mo.Fandees</a></footer>
-        <!-- JS -->
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="js/email.js"></script>
-        <script src="js/master.js"></script>
-    </body>
+    </section>
+    <footer>
+        <year></year> &copy; <a href="https://www.github.com/mohammed-fandees/" target="_blank">Mo.Fandees</a>
+    </footer>
+    <!-- JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/email.js"></script>
+    <script src="js/master.js"></script>
+</body>
 
 </html>
