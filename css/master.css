@@ -923,11 +923,11 @@ textarea {
 }
 
 .sweet-alert {
-  display: none !important;
+  display: none;
   color: #e52214;
 }
 
-.contact form div {
+.contact form > div {
   display: flex;
   gap: 15px;
 }
