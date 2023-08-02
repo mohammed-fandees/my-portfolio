@@ -1,0 +1,30 @@
+.navbar {
+  background: var(--black-II);
+  z-index: 10;
+}
+
+@media (min-width: 992px) {
+  .home:nth-child(-n + 1):not(.navbar) {
+    background: var(--dark-blue) !important;
+  }
+}
+
+.logo {
+  width: 40px;
+}
+
+a.nav-link:hover {
+  color: var(--main-color) !important;
+  /* font-weight: bold !important; */
+}
+
+@media (max-width: 991px) {
+  a.nav-link {
+    padding-left: 0 !important;
+  }
+}
+
+.navbar-toggler svg {
+  color: var(--white);
+  font-size: 30px;
+}

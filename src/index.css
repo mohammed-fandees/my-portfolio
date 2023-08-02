@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --dark-gray: #161616;
+  --dark-gray-II: #171717;
+  --dark-gray-III: #191919;
+  --dark-red: #c70039;
+  --dark-purple: #481380;
+  --dark-teal: #00909e;
+  --dark-green: #04a777;
+  --dark-blue: #035aa6;
+  --orange: #dd7631;
+  --white: #f5f5f5;
+  --light-gray: #b8b9b9;
+  --black: #080808;
+  --black-II: #101010;
+  --bg-color: var(--dark-gray-II);
+  --bg-color-II: var(--black-II);
+  --main-font-color: var(--white);
+  --second-font-color: var(--light-gray);
+  --main-color: var(--dark-red);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: var(--main-color);
+}
+
+body {
+  margin: 0;
+  background: var(--bg-color-II) !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.raleway {
+  font-family: 'Raleway', sans-serif;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+ul {
+  list-style-type: none !important;
+}
+
+.main-button {
+  padding: 0;
+  border: none;
+  outline: none;
+  background: var(--main-color);
+  border-radius: 5px;
+
+  margin: auto;
+  transition: all .4s ease;
+  -webkit-transition: all .4s ease;
+  -moz-transition: all .4s ease;
+  -ms-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  display: block;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0px var(--main-color);
+  cursor: pointer;
+}
+
+.main-button:hover {
+  border-color: var(--dark-gray);
+  box-shadow: 0 0 0 2px var(--main-color);
+}
+
+.main-button:active {
+  scale: .9;
+}
+
+.main-button a {
+  padding: 15px 30px;
+  display: block;
+  font-size: 15px;
+  color: var(--main-font-color);
+}

@@ -1,0 +1,87 @@
+.home {
+  background: var(--bg-color) url(../../images/man.jpg) no-repeat;
+  background-size: contain;
+  background-position: right bottom;
+  height: 100vh;
+}
+
+@media (max-width: 400px) {
+  body {
+    background: var(--dark-gray) url(../../images/man.jpg) no-repeat;
+  }
+}
+
+.home h1 {
+  font-size: 35px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (min-width: 685px) {
+  .home h1 {
+    font-size: 55px;
+  }
+}
+
+.name {
+  color: var(--main-color);
+}
+
+.Typewriter {
+  display: inline;
+}
+
+.typewrite-p {
+  font-size: 30px;
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .typewrite-p {
+    font-size: 25px;
+  }
+}
+
+.Typewriter__wrapper {
+  color: var(--main-color);
+}
+
+.social {
+  left: 3rem;
+  flex-direction: column;
+}
+
+@media (max-width: 991px) {
+  .social {
+    left: unset;
+    bottom: 3rem;
+    flex-direction: row;
+  }
+}
+
+.home .contact {
+  right: 3rem;
+}
+
+@media (max-width: 991px) {
+  .home .contact {
+    visibility: hidden;
+  }
+}
+
+.social svg,
+.home .contact svg {
+  color: var(--light-gray);
+  font-size: 21px;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+}
+
+.social svg:hover,
+.home .contact svg:hover {
+  scale: 1.1;
+  color: var(--white);
+}
