@@ -9,19 +9,13 @@ nav.contact {
 
 }
 
-@media (min-width: 992px) {
-  .home:nth-child(-n + 1):not(.navbar) {
-    background: var(--dark-blue) !important;
-  }
-}
-
 .logo {
   width: 40px;
 }
 
-a.nav-link:hover {
+a.nav-link:hover,
+a.active {
   color: var(--main-color) !important;
-  /* font-weight: bold !important; */
 }
 
 @media (max-width: 991px) {

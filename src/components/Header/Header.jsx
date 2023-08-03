@@ -38,7 +38,7 @@ export default function Header() {
                 <li key={link.text} className="nav-item">
                   <Link
                     onClick={() => setPath(getPath(link.path))}
-                    className="nav-link py-2 px-3 text-white"
+                    className={`${link.path === path ? "active" : ""} nav-link py-2 px-3 text-white`}
                     to={link.path}
                   >
                     {link.text}
