@@ -82,3 +82,7 @@ ul {
   font-size: 15px;
   color: var(--main-font-color);
 }
+
+.home + footer {
+  display: none !important;
+}
