@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home, About, Portfolio, Contact } from "./pages";
-import { Footer, Header } from "./components";
+import { Footer, Header, Settings } from "./components";
 
 
 export default function App() {
   return (
     <Router>
+      <Settings />
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
