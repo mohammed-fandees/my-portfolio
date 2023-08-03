@@ -1,5 +1,6 @@
 import iconOne from "../../images/coding.png";
-import iconTwo from "../../images/bulb.png";
+import iconTwo from "../../images/freelance.png";
+import iconThree from "../../images/bulb.png";
 import { SiPug } from "react-icons/si";
 import { FaKeyboard, FaLinux } from "react-icons/fa6";
 import { FiTerminal } from "react-icons/fi";
@@ -22,6 +23,12 @@ const cards = [
   {
     id: "card-two",
     image: iconTwo,
+    title: "Freelancing",
+    text: "I work as a freelancer on freelancing sites such as Khamsat, Mostaql and Upwork",
+  },
+  {
+    id: "card-three",
+    image: iconThree,
     title: "Creative Design",
     text: "I can give you a fantastic design to embrace as the main look of your website.",
   },
