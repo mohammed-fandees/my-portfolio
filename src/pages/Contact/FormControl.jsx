@@ -12,6 +12,7 @@ export default function FormControl(props) {
               required
               as={input.type}
               placeholder={input.placeholder}
+              name={input.name}
               style={{ height: "140px" }}
             />
           );
@@ -21,12 +22,13 @@ export default function FormControl(props) {
               <Form.Control
                 required
                 type={input.type}
+                name={input.name}
                 placeholder={input.placeholder}
               />
             );
           } else {
             return (
-              <Form.Control type={input.type} placeholder={input.placeholder} />
+              <Form.Control type={input.type} name={input.name} placeholder={input.placeholder} />
             );
           }
         }
