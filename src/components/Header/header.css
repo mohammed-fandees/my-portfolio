@@ -1,6 +1,12 @@
 .navbar {
-  background: var(--black-II);
   z-index: 10;
+}
+
+nav.about,
+nav.portfolio,
+nav.contact {
+  background: var(--black-II);
+
 }
 
 @media (min-width: 992px) {
