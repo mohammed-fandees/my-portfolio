@@ -6,15 +6,40 @@ import FormRow from "./FormRow";
 import FormControl from "./FormControl";
 import { rows, title, details } from "./data";
 import Detail from "./Detail";
+import emailjs from '@emailjs/browser';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+const Alert = withReactContent(Swal)
 
 export default function Contact() {
   const [validated, setValidated] = useState(false);
-
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    event.preventDefault();
     if (form.checkValidity() === false) {
-      event.preventDefault();
       event.stopPropagation();
+    } else {
+      emailjs.sendForm('service_sbzm0y9', 'template_yj9dach', form, '07Nn38ayRbgjjo0R2')
+      .then(() => {
+        Alert.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Thank you for reaching me out❤',
+          showConfirmButton: false,
+          timer: 3000
+        })
+        form.reset();
+        setValidated(false)
+      }, () => {
+        Alert.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'Faild to send :(',
+          showConfirmButton: false,
+          timer: 3000
+        })
+      });
     }
     setValidated(true);
   };
