@@ -1,15 +1,79 @@
 .settings {
-  right: 0;
+  right: -125px;
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
-  background: #fff;
   z-index: 10;
+  transition: all .3s ease-out;
+  -webkit-transition: all .3s ease-out;
+  -moz-transition: all .3s ease-out;
+  -ms-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+}
+
+.show-palit {
+  right: 0;
+}
+
+.settings .icon {
+  cursor: pointer;
+  background: #fff;
+  border-radius: 6px 0 0 6px;
+  -webkit-border-radius: 6px 0 0 6px;
+  -moz-border-radius: 6px 0 0 6px;
+  -ms-border-radius: 6px 0 0 6px;
+  -o-border-radius: 6px 0 0 6px;
+  height: 40px;
 }
 
 .settings .icon img {
-  
+  width: 40px;
+  height: 40px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.settings .box {
+  background: #fff;
+  padding: 10px;
+  border-radius: 0 0 0 6px;
+  -webkit-border-radius: 0 0 0 6px;
+  -moz-border-radius: 0 0 0 6px;
+  -ms-border-radius: 0 0 0 6px;
+  -o-border-radius: 0 0 0 6px;
+}
+
+.settings .box h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.settings .color-palit  {
+  grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+  gap: 10px;
+  padding-top: 20px !important;
+}
+.settings .color-palit li {
+  width: 30px;
+  height: 30px;
+  display: block;
+  background: var(--main-color);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: pointer;
 }
