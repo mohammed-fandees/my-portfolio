@@ -6,7 +6,7 @@ export default function Footer() {
     >
       <span>{new Date().getFullYear()} </span>
       &copy;
-      <a style={{ color: "var(--main-color)" }} href="https://google.com">
+      <a style={{ color: "var(--main-color)" }} href="https://mohamed-fandees.firebaseapp.com">
         {" "}
         Mohammed Fandees
       </a>
