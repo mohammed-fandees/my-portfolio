@@ -15,22 +15,22 @@ export default function Portfolio() {
             return (
               <div key={work.id} className="col-xl-4 col-md-6 flex-column">
                 <div className="work d-flex rounded-3 overflow-hidden mb-4">
-                  <div className="icon text-center">
+                  <div className="icon text-center m-transition">
                     <Work />
                   </div>
                   <div className="text p-4 w-100 d-flex flex-column">
-                    <h3 className="mb-3 p-2">{work.title}</h3>
+                    <h3 className="mb-3 p-2 m-transition">{work.title}</h3>
                     <p>{work.desc}</p>
                     <div className="links d-flex justify-content-end align-items-end">
                       {work.source ? (
-                        <a target="_blank" rel="noreferrer" href={work.source}>
+                        <a className="m-transition" target="_blank" rel="noreferrer" href={work.source}>
                           <span>
                             <Branch /> Code
                           </span>
                         </a>
                       ) : null}
                       {work.live ? (
-                        <a target="_blank" rel="noreferrer" href={work.live}>
+                        <a className="m-transition" target="_blank" rel="noreferrer" href={work.live}>
                           <span>
                             <Play /> Live
                           </span>

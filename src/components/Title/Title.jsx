@@ -9,11 +9,11 @@ export default function Title(props) {
       key={content.id}
     >
       <h2>
-        {content.title} <span>{content.customize}</span>
+        {content.title} <span className="m-transition">{content.customize}</span>
       </h2>
       {content.subtitle ? (
         <span>
-          {content.subtitle} <span>{content.subcustomize}</span>
+          {content.subtitle} <span className="m-transition">{content.subcustomize}</span>
         </span>
       ) : null}
     </div>
