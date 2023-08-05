@@ -23,11 +23,11 @@ export default function Home() {
         arr={contact}
       />
       <Particles options={options} init={particlesInit} />
-      <h1 className="text-white text-center fw-bolder">
-        <span className="name">Mohammed</span> Fandees
+      <h1 className="text-white text-center fw-bolder px-3">
+        <span className="name m-transition">Mohammed</span> Fandees
       </h1>
 
-      <div className="typewrite-p text-white">
+      <div className="typewrite-p text-white m-transition">
         I am
         <Typewriter
           options={{
