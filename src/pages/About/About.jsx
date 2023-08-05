@@ -16,7 +16,7 @@ export default function About() {
           <div className="col-lg-6 col-md-12">
             <div className="text">
               <h3 className="mb-3">
-                I'm creative <span>React Developer</span> based in Menofia, EG.
+                I'm creative <span className="m-transition">React Developer</span> based in Menofia, EG.
               </h3>
               <p className="mt-3 mb-4">
                 With a year of experience as a junior web developer, I have
@@ -63,7 +63,7 @@ export default function About() {
                 placement="top"
                 overlay={<Tooltip id="tooltip-top">{icon.tooltip}</Tooltip>}
               >
-                <span>{icon.el}</span>
+                <span className="overlay-icon">{icon.el}</span>
               </OverlayTrigger>
             </div>;
           })}

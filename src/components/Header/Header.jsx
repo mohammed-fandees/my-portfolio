@@ -18,7 +18,13 @@ export default function Header() {
   return (
     <nav className={`${path.slice(1)} navbar navbar-expand-lg position-fixed top-0 w-100`}>
       <div className="container">
-        <Link to="/" className="navbar-brand">
+        <Link 
+          to="/" className="navbar-brand"   
+          onClick={() => {
+            setPath(getPath("/"));
+            menu.current.classList.remove("show");
+          }}
+          >
           <img src={Logo} alt="logo" className="logo" />
         </Link>
         <button

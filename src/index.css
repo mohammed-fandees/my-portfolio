@@ -33,6 +33,14 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
+.m-transition {
+  transition: all .3s ease !important;
+  -webkit-transition: all .3s ease !important;
+  -moz-transition: all .3s ease !important;
+  -ms-transition: all .3s ease !important;
+  -o-transition: all .3s ease !important;
+}
+
 a {
   text-decoration: none !important;
 }
