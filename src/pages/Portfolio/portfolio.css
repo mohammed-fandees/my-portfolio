@@ -62,11 +62,6 @@
   color: var(--main-color);
   width: 106px;
   text-align: center;
-  transition: 700ms ease;
-  -webkit-transition: 700ms ease;
-  -moz-transition: 700ms ease;
-  -ms-transition: 700ms ease;
-  -o-transition: 700ms ease;
 }
 
 .portfolio .links a span {
