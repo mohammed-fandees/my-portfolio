@@ -20,7 +20,11 @@ export default function Portfolio() {
                   </div>
                   <div className="text p-4 w-100 d-flex flex-column">
                     <h3 className="mb-3 p-2 m-transition">{work.title}</h3>
-                    <p>{work.desc}</p>
+                    <div className="techs">
+                      {work.techs.map((tech) => {
+                        return <span key={tech} className="tech">{tech}</span>
+                      })}
+                    </div>
                     <div className="links d-flex justify-content-end align-items-end">
                       {work.source ? (
                         <a className="m-transition" target="_blank" rel="noreferrer" href={work.source}>

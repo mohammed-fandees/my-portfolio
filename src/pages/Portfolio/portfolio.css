@@ -6,6 +6,7 @@
 .portfolio .work {
   flex-direction: column;
 }
+
 /* @media (max-width: 768px) {
 } */
 
@@ -96,4 +97,17 @@
 
 .portfolio .links a svg {
   margin-bottom: 3px;
+}
+
+.portfolio .techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.portfolio .techs .tech {
+  padding: 5px 10px;
+  background: var(--bg-color);
+  color: var(--second-font-color);
+  border-radius: 6px;
 }
