@@ -29,9 +29,12 @@ jobs:
 
       - name: Authenticate with Firebase
         env:
-          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
-        run: firebase use --add mohammed-fandeess --token "$FIREBASE_SERVICE_ACCOUNT_KEY"
-        
+          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.MY_CUSTOM_FIREBASE_KEY }}
+        run: |
+          echo "$FIREBASE_SERVICE_ACCOUNT_KEY" > serviceAccountKey.json
+          export GOOGLE_APPLICATION_CREDENTIALS="$GITHUB_WORKSPACE/serviceAccountKey.json"
+          firebase use --add mohammed-fandeess
+
       - name: Deploy to Firebase
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
