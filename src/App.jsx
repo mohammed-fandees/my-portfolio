@@ -35,7 +35,7 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
-          <img src={palestine} className="palestine"/>
+          <img src={palestine} className="palestine" alt="free palestine💟"/>
           <Footer />
         </>
       )}
