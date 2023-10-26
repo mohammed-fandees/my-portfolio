@@ -12,7 +12,7 @@ export default function App() {
     setTimeout(() => {
       setLoading(false);
     }, 2500);
-  }, [window.location]);
+  }, []);
 
   return (
     <Router>
