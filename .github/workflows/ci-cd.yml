@@ -37,5 +37,8 @@ jobs:
 
       - name: Deploy to Firebase
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: firebase deploy --token "$FIREBASE_TOKEN"
+          FIREBASE_SERVICE_ACCOUNT_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_KEY }}
+        run: |
+          echo "$FIREBASE_SERVICE_ACCOUNT_KEY" > serviceAccountKey.json
+          export GOOGLE_APPLICATION_CREDENTIALS="$GITHUB_WORKSPACE/serviceAccountKey.json"
+          firebase deploy
