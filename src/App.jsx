@@ -3,6 +3,7 @@ import { Home, About, Portfolio, Contact } from "./pages";
 import { Footer, Header, Settings } from "./components";
 import { useEffect, useState } from "react";
 import { Triangle } from "react-loader-spinner";
+import palestine from "./images/Animated-Flag-Palestine.gif";
 
 export default function App() {
   const [loading, setLoading] = useState(false);
@@ -34,6 +35,7 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
+          <img src={palestine} className="palestine"/>
           <Footer />
         </>
       )}

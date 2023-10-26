@@ -95,6 +95,20 @@ ul {
   color: var(--main-font-color);
 }
 
-.home + footer {
+.home+footer {
   display: none !important;
+}
+
+.palestine {
+  width: 100px;
+  position: fixed;
+  bottom: 45px;
+  left: 80px;
+}
+
+@media (width <=768px) {
+  .palestine {
+    width: 80px;
+    left: 10px;
+  }
 }
