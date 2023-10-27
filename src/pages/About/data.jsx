@@ -42,6 +42,7 @@ const skills = [
   { id: "bs", name: "Bootstrap", level: 90 },
   { id: "react", name: "React", level: 75 },
   { id: "figma", name: "Figma", level: 70 },
+  { id: "vue", name: "Vue.js", level: 55 },
 ];
 
 const icons = [
