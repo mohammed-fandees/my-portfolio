@@ -20,7 +20,7 @@ export const options = {
       value: { min: 1, max: 3 },
     },
     links: {
-      enable: true,
+      enable: false,
       distance: 150,
       color: "#808080",
       opacity: 0.4,

@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, About, Portfolio, Contact } from "./pages";
-import { Footer, Header, Settings } from "./components";
+import { BrowserRouter as Router } from "react-router-dom";
+import { AnimatedRoutes, Footer, Header, Settings } from "./components";
 import { useEffect, useState } from "react";
 import { Triangle } from "react-loader-spinner";
 import palestine from "./images/Animated-Flag-Palestine.gif";
@@ -29,12 +28,7 @@ export default function App() {
         <>
           <Settings />
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
+            <AnimatedRoutes />
           <Footer />
           <img src={palestine} className="palestine" alt="free palestine💟"/>
         </>

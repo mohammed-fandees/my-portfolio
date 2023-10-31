@@ -4,10 +4,12 @@ import { IoGitNetwork as Work } from "react-icons/io5";
 import { FaCodeBranch as Branch } from "react-icons/fa6";
 import { BsFillPlayFill as Play } from "react-icons/bs";
 import { works, title } from "./data";
+import { motion } from "framer-motion"
+import { animations } from "../../components/Animations.config";
 
 export default function Portfolio() {
   return (
-    <main className="portfolio">
+    <motion.main className="portfolio" variants={animations} initial="initial" animate="animate" exit="exit">
       <Title content={title} />
       <div className="container">
         <div className="row justify-content-center mb-4">
@@ -48,6 +50,6 @@ export default function Portfolio() {
           })}
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

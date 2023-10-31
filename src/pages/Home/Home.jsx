@@ -6,6 +6,8 @@ import { options } from "./particles-options";
 import List from "./List";
 import Typewriter from "typewriter-effect";
 import { social, contact } from "./data";
+import { motion } from "framer-motion";
+import { animations } from "../../components/Animations.config";
 
 export default function Home() {
   const particlesInit = useCallback(async (engine) => {
@@ -13,7 +15,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="home d-flex justify-content-center align-items-center flex-column">
+    <motion.main className="home d-flex justify-content-center align-items-center flex-column"
+      variants={animations}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+    >
       <List
         className="social position-absolute m-0 p-0 d-flex gap-4"
         arr={social}
@@ -37,6 +44,6 @@ export default function Home() {
           }}
         />
       </div>
-    </main>
+    </motion.main>
   );
 }

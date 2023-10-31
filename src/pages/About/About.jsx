@@ -6,10 +6,12 @@ import aboutImage from "../../images/about.jpg";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import {title, icons, cards, skills} from "./data";
+import {motion} from "framer-motion"
+import { animations } from "../../components/Animations.config";
 
 export default function About() {
   return (
-    <main className="about">
+    <motion.main className="about" variants={animations} initial="initial" animate="animate" exit="exit">
       <Title content={title} />
       <div className="container text-white">
         <div className="row">
@@ -69,6 +71,6 @@ export default function About() {
           })}
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

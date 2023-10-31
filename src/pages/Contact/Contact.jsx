@@ -8,7 +8,9 @@ import { rows, title, details } from "./data";
 import Detail from "./Detail";
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
+import withReactContent from 'sweetalert2-react-content';
+import { motion } from "framer-motion"
+import { animations } from "../../components/Animations.config";
 
 const Alert = withReactContent(Swal)
 
@@ -47,7 +49,7 @@ export default function Contact() {
   let id = 0;
 
   return (
-    <main className="contact">
+    <motion.abbrmain className="contact" variants={animations} initial="initial" animate="animate" exit="exit">
       <Title content={title} />
       <div className="container">
         <div className="row">
@@ -91,6 +93,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </main>
+    </motion.abbrmain>
   );
 }
