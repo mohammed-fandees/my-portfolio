@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/9b724250-5120-4677-a2e0-78b5979e78d1/project/17cb94e0-2ab8-4b81-a115-2ba45a6e2de4.svg)](https://wakatime.com/badge/user/9b724250-5120-4677-a2e0-78b5979e78d1/project/17cb94e0-2ab8-4b81-a115-2ba45a6e2de4)
+
 # Portfolio `Latest Release`
 
 ### Techs
