@@ -1,91 +1,172 @@
-[![wakatime](https://wakatime.com/badge/user/9b724250-5120-4677-a2e0-78b5979e78d1/project/17cb94e0-2ab8-4b81-a115-2ba45a6e2de4.svg)](https://wakatime.com/badge/user/9b724250-5120-4677-a2e0-78b5979e78d1/project/17cb94e0-2ab8-4b81-a115-2ba45a6e2de4)
+# 🚀 Portfolio - `Latest Release`
 
-# Portfolio `Latest Release`
+A high-performance, modern portfolio website built with cutting-edge frontend technologies to showcase projects, skills, and experience.
 
-### Techs
-`React JS` - `JSX` - `Bootstrap 5` - `CSS3` - `HTML5` - `JavaScript`
+---
 
-### New Features
-- Single-page application
-- Faster
-- Some new components and ideas 
+## 🌟 Tech Stack
 
-### How To Run Application
+- **React.js** – Component-based UI framework
+- **JSX** – JavaScript XML syntax for UI design
+- **TailwindCSS** – Responsive CSS framework
+- **JavaScript** – Core scripting language
+- **Lucide React** – Icon library for modern UIs
+- **Vite** – Fast build tool for modern web development
+- **ESLint** – Code linting and best practices
 
-1. Install the zip file.
-2. Extract files.
-3. Download `Node JS` from here  [Node.js](https://nodejs.org/en/download) and install it in your local machine.
-4. Open the file and run the command in the application directory.
+---
 
-#### Scripts you can run:
+## 🎯 Key Features
 
+- ⚡ **Fast & Optimized** – Built for high performance and speed
+- 📱 **Fully Responsive** – Works seamlessly on all screen sizes
+- 🛠 **Modular Components** – Easy to maintain and expand
+- 🎨 **Enhanced UI/UX** – Modern, clean, and interactive design
+- 🔗 **SEO-Friendly** – Optimized for better search rankings
+- 🌙 **Dark Mode Support** – Toggle between light and dark themes
+- 🚀 **Powered by Vite** – Ultra-fast HMR and optimized builds
+
+---
+
+## 📦 Installation & Setup
+
+### **1️⃣ Clone the Repository**
+
+```sh
+git clone https://github.com/mohammed-fandees/my-portfolio.git
+cd my-portfolio
 ```
-npm start
-```
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **2️⃣ Install Dependencies**
 
-```
-npm test 
+```sh
+npm install
 ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### **3️⃣ Start the Development Server**
 
+```sh
+npm run dev
 ```
+
+- Open [http://localhost:3000](http://localhost:3000) in your browser.
+- Live reload enabled for instant updates.
+
+---
+
+## 🔬 Available Scripts
+
+### **Run Development Server**
+
+```sh
+npm run dev
+```
+
+### **Run ESLint**
+
+```sh
+npm run lint
+```
+
+- Checks for coding errors and enforces best practices.
+
+### **Build for Production**
+
+```sh
 npm run build
 ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Creates an optimized production build.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Preview Production Build**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-```
-npm run eject
+```sh
+npm run preview
 ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Serves the production build locally.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single-build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you're on your own.
+## 📁 Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However, we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+src/
+├── assets/                # Images & static assets
+│   ├── hero.jpg
+│   └── about.jpg
+├── components/            # Reusable UI components
+│   ├── layout/            # Structural components
+│   │   ├── Header.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Navigation.jsx
+│   │   └── MobileMenu.jsx
+│   ├── common/            # Utility components
+│   │   ├── ImageWithFallback.jsx
+│   │   ├── ScrollReveal.jsx
+│   │   ├── SectionTitle.jsx
+│   │   ├── BackToTop.jsx
+│   │   ├── SkillBar.jsx
+│   │   ├── AnimatedCounter.jsx
+│   │   └── TechSlider.jsx
+│   ├── sections/          # Page sections
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Services.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Portfolio.jsx
+│   │   ├── Experience.jsx
+│   │   ├── Testimonials.jsx
+│   │   └── Contact.jsx
+│   └── cards/             # UI Cards
+│       ├── ProjectCard.jsx
+│       ├── TestimonialCard.jsx
+│       ├── ServiceCard.jsx
+│       └── TimelineItem.jsx
+├── hooks/                 # Custom React hooks
+│   ├── useDarkMode.js
+│   ├── useScrollProgress.js
+│   ├── useActiveSection.js
+│   └── useReducedMotion.js
+├── context/               # Context API for global state
+│   └── ThemeContext.jsx
+├── data/                  # Static data files
+│   ├── navItems.js
+│   ├── designSkills.js
+│   ├── developmentSkills.js
+│   ├── projects.js
+│   ├── services.js
+│   ├── stats.js
+│   ├── testimonials.js
+│   ├── techStack.js
+│   ├── timeline.js
+│   └── designTools.js
+├── utils/                 # Utility functions
+│   ├── smoothScroll.js
+│   └── animationHelpers.js
+├── App.jsx                # Main App Component
+└── index.jsx              # Application entry point
+```
 
-### Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📖 Learn More
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React.js Documentation](https://reactjs.org/)
+- [TailwindCSS Documentation](https://tailwindcss.com/docs/installation)
+- [Vite Documentation](https://vitejs.dev/guide/)
+- [ESLint Guide](https://eslint.org/docs/latest/user-guide/getting-started)
 
-#### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 🚀 Future Enhancements
 
-#### Analyzing the Bundle Size
+- 🎨 **More UI animations & transitions**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- 🔥 **Integrate a CMS for content management**
 
-#### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-#### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-#### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-#### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
+🚀 **Happy Coding!** 🎨💻
