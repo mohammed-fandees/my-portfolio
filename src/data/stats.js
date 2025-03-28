@@ -1,24 +1,25 @@
-import { Users, Award, Coffee, Code as CodeStat } from 'lucide-react';
+import { Users, Award, Clock7, Code as CodeStat } from 'lucide-react';
+import getWakaTime from "../utils/wakatime";
 
 export const stats = [
   {
-    count: 120,
+    count: 2,
     title: 'Clients',
     icon: Users
   },
   {
-    count: 85,
+    count: 25,
     title: 'Projects',
     icon: CodeStat
   },
   {
-    count: 15,
-    title: 'Awards',
+    count: 24,
+    title: 'Certificates',
     icon: Award
   },
   {
-    count: 1240,
-    title: 'Coffee Cups',
-    icon: Coffee
+    count: getWakaTime(),
+    title: 'Coding Hours',
+    icon: Clock7
   }
 ];

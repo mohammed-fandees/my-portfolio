@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { User } from 'lucide-react';
 import { Download } from 'lucide-react';
 import SectionTitle from '../common/SectionTitle';
@@ -8,15 +8,56 @@ import AnimatedCounter from '../common/AnimatedCounter';
 import { useTheme } from '../../contexts/ThemeContext';
 import { stats } from '../../data/stats';
 import about from "../../assets/about.jpg"
+import getWakaTime from '../../utils/wakatime';
+
+const localStorageKey = 'codingHoursData';
 
 const About = () => {
   const { darkMode } = useTheme();
+  // Initialize with value from localStorage or default to 0
+  const [codingHours, setCodingHours] = useState(() => {
+    const savedValue = localStorage.getItem(localStorageKey);
+    return savedValue ? parseInt(savedValue, 10) : 0;
+  });
+
+  useEffect(() => {
+    // Define async function to fetch coding hours
+    const fetchCodingHours = async () => {
+      try {
+        const response = await getWakaTime();
+        
+        // Only update if we got a valid number
+        if (response && typeof response === 'number' && !isNaN(response)) {
+          setCodingHours(response);
+          localStorage.setItem(localStorageKey, response.toString());
+        }
+      } catch (error) {
+        console.error("Error fetching WakaTime data:", error);
+      }
+    };
+
+    fetchCodingHours();
+  }, []);
+  
+  // Memoize the stats array with correct coding hours value
+  const processedStats = React.useMemo(() => {
+    return stats.map(stat => {
+      if (stat.title === 'Coding Hours') {
+        return {
+          ...stat,
+          currentValue: codingHours
+        };
+      }
+      return stat;
+    });
+  }, [codingHours]);
   
   return (
     <section id="about" className="py-20" aria-labelledby="about-title">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle title="About Me" subtitle="My journey, experience, and approach to web development" />
         
+        {/* Profile section */}
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <ScrollReveal animation="fade-right" delay={200}>
             <div className="relative">
@@ -62,7 +103,7 @@ const About = () => {
               } border hover:shadow-md transition-all duration-300 hover:-translate-y-1`}>
                 <h4 className="font-bold text-lg mb-3">Frontend Development</h4>
                 <p className={darkMode ? 'text-gray-300' : 'text-gray-600'}>
-                  Building responsive websites with HTML, CSS, JavaScript, React, and Next.js.
+                  Building responsive websites with HTML, CSS, JavaScript, and React.js.
                 </p>
               </div>
               
@@ -83,7 +124,7 @@ const About = () => {
               </div>
               <div>
                 <h4 className="font-bold mb-2">Email</h4>
-                <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} overflow-ellipsis`}>mohammed.fandees@gmail.com</p>
+                <p className={`${darkMode ? 'text-gray-300' : 'text-gray-600'} overflow-ellipsis overflow-hidden`}>mohammed.fandees@gmail.com</p>
               </div>
               <div>
                 <h4 className="font-bold mb-2">Location</h4>
@@ -112,30 +153,27 @@ const About = () => {
         
         {/* Stats Section */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-          {stats.map((stat, index) => (
-            <ScrollReveal 
-              key={index} 
-              animation="fade-up" 
-              delay={index * 150} 
+          {processedStats.map((stat) => (
+            <div 
+              key={`stat-${stat.title}`}
               className={`p-6 rounded-xl ${
                 darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
-              } border hover:shadow-lg transition-all duration-300 hover:-translate-y-2 text-center group`}
+              } border hover:shadow-lg transform transition-transform duration-300 ease-in-out hover:-translate-y-2 text-center group`}
             >
               <div className={`w-16 h-16 mx-auto rounded-full ${
                 darkMode ? 'bg-gray-700' : 'bg-gray-100'
               } flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 group-hover:bg-gradient-to-r ${
                 darkMode ? 'group-hover:from-violet-500 group-hover:to-fuchsia-500' : 'group-hover:from-emerald-500 group-hover:to-teal-500'
               }`}>
-                <stat.icon 
-                  size={24} 
-                  className={`${
-                    darkMode ? 'text-violet-400' : 'text-teal-600'
-                  } group-hover:text-white transition-colors duration-300`} 
-                />
+                <stat.icon size={24} className={`${darkMode ? 'text-violet-400' : 'text-teal-600'} group-hover:text-white transition-colors duration-300`} />
               </div>
-              <AnimatedCounter end={stat.count} suffix={stat.suffix || ''} />
+              <AnimatedCounter 
+                key={`counter-${stat.title}-${stat.title === 'Coding Hours' ? codingHours : stat.count}`}
+                end={stat.title === 'Coding Hours' ? codingHours : stat.count} 
+                suffix={stat.suffix || ''} 
+              />
               <p className={`mt-2 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{stat.title}</p>
-            </ScrollReveal>
+            </div>
           ))}
         </div>
       </div>

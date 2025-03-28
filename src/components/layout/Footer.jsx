@@ -29,6 +29,7 @@ const Footer = () => {
                   href={["https://github.com/mohammed-fandees", "https://linkedin.com/in/mohammed-fandees", "mailto:mohammed.fandees@gmail.com"][i]}
                   target='_blank'
                   className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-125 transform"
+                  aria-label='Social media link'
                 >
                   <Icon size={20} />
                 </a>

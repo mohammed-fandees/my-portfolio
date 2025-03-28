@@ -7,7 +7,7 @@ const SkillBar = ({ skill, percentage, index }) => {
     <div className="mb-6">
       <div className="flex justify-between items-center mb-2">
         <span className="font-medium">{skill}</span>
-        <span className={`transition-color ${darkMode ? "text-violet-400" : "text-teal-600"}`}>{percentage}%</span>
+        <span className={`transition-color ${darkMode ? "text-violet-400" : "text-teal-600"}`}>{percentage}{!isNaN(percentage) && '%'}</span>
       </div>
       <div className={`w-full transition-all ${darkMode ? "bg-gray-700" : "bg-gray-200"} rounded-full h-2 overflow-hidden`}>
         <div

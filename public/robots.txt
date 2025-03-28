@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Sitemap: https://mohammed-fandees.vercel.app/sitemap.xml

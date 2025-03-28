@@ -7,8 +7,8 @@ const MobileMenu = ({ isOpen, activeSection, onClose }) => {
   
   return (
     <div 
-      className={`md:hidden ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} transition-all duration-300 overflow-hidden border-t ${
-        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+      className={`xl:hidden ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} transition-all duration-300 overflow-hidden border-t ${
+        isOpen ? 'max-h-105 opacity-100' : 'max-h-0 opacity-0'
       }`}
     >
       <div className="px-2 pt-2 pb-3 space-y-1">

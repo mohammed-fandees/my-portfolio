@@ -151,7 +151,7 @@ const Contact = () => {
           <ScrollReveal animation="fade-left" delay={400}>
             <div className={`p-8 rounded-xl ${
               darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'
-            } border shadow-lg hover:shadow-xl transition-all duration-300`}>
+            } h-[100%] border shadow-lg hover:shadow-xl transition-all duration-300`}>
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

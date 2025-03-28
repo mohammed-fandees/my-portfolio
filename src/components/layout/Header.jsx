@@ -23,12 +23,12 @@ const Header = ({ activeSection }) => {
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
+          <div className="hidden xl:block">
             <Navigation activeSection={activeSection} />
           </div>
           
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="xl:hidden flex items-center gap-4">
             <button 
               onClick={toggleDarkMode}
               className={`p-2 rounded-full ${darkMode ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-100 hover:bg-gray-200'} transition-all duration-300 hover:scale-110`}
@@ -41,6 +41,7 @@ const Header = ({ activeSection }) => {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md ${darkMode ? 'text-gray-300 hover:bg-gray-800' : 'text-gray-600 hover:bg-gray-100'} hover:scale-110 transition-all duration-300`}
               aria-expanded={mobileMenuOpen}
+              aria-label='Toggle mobile menu'
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

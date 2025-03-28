@@ -9,24 +9,19 @@ import {
 
 export const services = [
   {
+    title: 'Web Development',
+    description: 'Building responsive websites and web applications using modern technologies.',
+    icon: CodeIcon
+  },
+  {
     title: 'UI/UX Design',
     description: 'Creating intuitive and engaging user interfaces that deliver exceptional user experiences.',
     icon: Layout
   },
   {
-    title: 'Web Development',
-    description: 'Building responsive and performant websites and web applications using modern technologies.',
-    icon: CodeIcon
-  },
-  {
     title: 'Backend Development',
     description: 'Developing robust server-side applications and APIs to power your web and mobile apps.',
     icon: Database
-  },
-  {
-    title: 'Mobile Development',
-    description: 'Creating cross-platform mobile applications that provide a native-like experience.',
-    icon: Smartphone
   },
   {
     title: 'Performance Optimization',

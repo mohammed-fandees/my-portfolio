@@ -70,7 +70,7 @@ const Hero = () => {
             
             <div className="mt-12 flex items-center">
               <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map(i => (
+                {[1, 2].map(i => (
                   <div 
                     key={i} 
                     className={`w-10 h-10 rounded-full border-2 ${
@@ -94,7 +94,7 @@ const Hero = () => {
                     </svg>
                   ))}
                 </div>
-                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>120+ Satisfied Clients</p>
+                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2 Satisfied Clients</p>
               </div>
             </div>
           </ScrollReveal>
@@ -114,7 +114,7 @@ const Hero = () => {
               </div>
               
               {/* Floating elements */}
-              <div className={`absolute z-20 -top-6 -left-2 sm:-left-6 p-4 rounded-lg ${
+              <div className={`absolute z-20 -top-6 -left-2 md:-left-6 p-4 rounded-lg ${
                 darkMode ? 'bg-gray-800' : 'bg-white'
               } shadow-lg flex items-center gap-2 animate-float`}>
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
@@ -130,7 +130,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className={`absolute z-20 top-1/4 -right-2 sm:-right-10 p-4 rounded-lg ${
+              <div className={`absolute z-20 top-1/4 -right-2 xl:-right-10 p-4 rounded-lg ${
                 darkMode ? 'bg-gray-800' : 'bg-white'
               } shadow-lg animate-float animation-delay-1000`}>
                 <div className="flex items-center justify-center">

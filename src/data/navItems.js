@@ -1,3 +1,5 @@
+import { testimonials } from "./testimonials";
+
 export const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
@@ -5,6 +7,7 @@ export const navItems = [
   { name: 'Skills', href: '#skills' },
   { name: 'Portfolio', href: '#portfolio' },
   { name: 'Experience', href: '#experience' },
-  { name: 'Testimonials', href: '#testimonials' },
   { name: 'Contact', href: '#contact' }
 ];
+
+testimonials.length && navItems.splice( -1, 0, { name: 'Testimonials', href: '#testimonials' });
