@@ -6,10 +6,21 @@ async function getWakaTime() {
     return null;
   }
 
-  const url = `https://wakatime.com/api/v1/users/current/stats?api_key=${apiKey}`;
+  const url = "https://wakatime.com/api/v1/users/current/stats";
 
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
     const data = await response.json();
 
     if (data.data && data.data.categories) {
