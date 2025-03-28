@@ -1,12 +1,7 @@
 async function getWakaTime() {
   const apiKey = import.meta.env.WAKATIME_API_KEY;
 
-  if (!apiKey) {
-    console.error("Error: WakaTime API key not found");
-    return null;
-  }
-
-  const url = `https://cors-anywhere.herokuapp.com/https://wakatime.com/api/v1/users/current/stats?api_key=${apiKey}`;
+  const url = `https://wakatime.com/api/v1/users/current/stats?api_key=${apiKey}`;
 
   try {
     const response = await fetch(url);
