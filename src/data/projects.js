@@ -11,7 +11,7 @@ export const projects = [
   {
     title: 'E-commerce Website',
     description: 'A modern e-commerce platform with advanced filtering and cart functionality.',
-    image: '',
+    image: '/api/placeholder/600/400',
     icon: ShoppingBag,
     category: 'Web App',
     tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
@@ -21,7 +21,7 @@ export const projects = [
   {
     title: 'Portfolio Template',
     description: 'A customizable portfolio template for creative professionals.',
-    image: '',
+    image: '/api/placeholder/600/400',
     icon: LayoutGrid,
     category: 'Frontend',
     tech: ['React', 'Tailwind CSS', 'Framer Motion'],
@@ -31,7 +31,7 @@ export const projects = [
   {
     title: 'Task Manager',
     description: 'A productivity app to help you manage your daily tasks and projects.',
-    image: '',
+    image: '/api/placeholder/600/400',
     icon: Clock,
     category: 'Web App',
     tech: ['React', 'Firebase', 'Tailwind CSS'],
@@ -41,7 +41,7 @@ export const projects = [
   {
     title: 'Blog Platform',
     description: 'A content management system for bloggers with markdown support.',
-    image: '',
+    image: '/api/placeholder/600/400',
     icon: BookOpen,
     category: 'Web App',
     tech: ['Next.js', 'Prisma', 'PostgreSQL'],
@@ -51,7 +51,7 @@ export const projects = [
   {
     title: 'Code Editor',
     description: 'A browser-based code editor with syntax highlighting and live preview.',
-    image: '',
+    image: '/api/placeholder/600/400',
     icon: Code,
     category: 'Tool',
     tech: ['React', 'Monaco Editor', 'WebSockets'],
@@ -61,7 +61,7 @@ export const projects = [
   {
     title: 'CLI Tool',
     description: 'A command-line tool for automating web development workflows.',
-    image: '',
+    image: '/api/placeholder/600/400',
     icon: Terminal,
     category: 'Tool',
     tech: ['Node.js', 'Commander.js', 'Inquirer'],
