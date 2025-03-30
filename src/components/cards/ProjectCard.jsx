@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
     <div className={`group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border`}>
       <div className="relative overflow-hidden">
         <ImageWithFallback 
-          src={project.image} 
+          src={project.image === "https://placehold.co/600x400" ? project.icon : project.image} 
           alt={project.title} 
           className="w-full h-60 object-cover transition-transform duration-700 group-hover:scale-110"
           fallbackIcon={project.icon}
