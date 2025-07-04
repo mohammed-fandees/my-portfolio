@@ -1,20 +1,19 @@
-import React from 'react';
+
 import { ChevronRight, Github, Linkedin, Mail } from 'lucide-react';
 import { navItems } from '../../data/navItems';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const Footer = () => {
   const { darkMode } = useTheme();
-  
+
   return (
     <footer className={`py-12 ${darkMode ? 'bg-gray-900' : 'bg-gray-800'} text-white`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 pb-8 border-b border-gray-700">
           <div>
             <a href="#home" className="text-2xl font-bold">
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${
-                darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'
-              }`}>
+              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'
+                }`}>
                 Port
               </span>
               <span>Folio.</span>
@@ -24,8 +23,8 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4 mt-6">
               {[Github, Linkedin, Mail].map((Icon, i) => (
-                <a 
-                  key={i} 
+                <a
+                  key={i}
                   href={["https://github.com/mohammed-fandees", "https://linkedin.com/in/mohammed-fandees", "mailto:mohammed.fandees@gmail.com"][i]}
                   target='_blank'
                   className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-125 transform"
@@ -66,7 +65,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="mt-8 text-center text-gray-400">
           <p className="mb-1">© {new Date().getFullYear()} Mohammed Fandees. All rights reserved.</p>
           <p className="text-sm">Designed and developed with ❤️</p>

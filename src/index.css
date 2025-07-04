@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -16,6 +15,16 @@ button {
 #root {
   overflow-x: hidden;
 }
+
+.hero-image {
+  transition: border 260ms cubic-bezier(0.4, 0, 0.2, 1), rotate 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client-image * {
+  transition: all 260ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* For elements that need longer or more pronounced transitions, override as needed in component classes */
 
 @keyframes pulse-slow {
   0%,

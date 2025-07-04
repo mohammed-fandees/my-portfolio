@@ -15,7 +15,7 @@ const Header = ({ activeSection }) => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <a href="#home" className="text-2xl font-bold">
-              <span className={`text-transparent bg-clip-text bg-gradient-to-r ${darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'}`}>
+              <span className={`text-transparent bg-clip-text bg-gradient-to-r transition-colors ${darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'}`}>
                 Port
               </span>
               <span>Folio.</span>

@@ -1,21 +1,20 @@
-import React from 'react';
+
 import { User } from 'lucide-react';
 import ImageWithFallback from '../common/ImageWithFallback';
 import { useTheme } from '../../contexts/ThemeContext';
 
 const TestimonialCard = ({ testimonial }) => {
   const { darkMode } = useTheme();
-  
+
   return (
     <div className={`p-6 rounded-xl ${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} border relative hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
       <div className="absolute top-6 right-6 text-5xl opacity-10">
-        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${
-          darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'
-        }`}>
+        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'
+          }`}>
           "
         </span>
       </div>
-      
+
       <div className="mb-4">
         <div className="flex">
           {[1, 2, 3, 4, 5].map((i) => (
@@ -25,15 +24,15 @@ const TestimonialCard = ({ testimonial }) => {
           ))}
         </div>
       </div>
-      
+
       <p className={`mb-6 relative z-10 ${darkMode ? "text-gray-300" : "text-gray-600"}`}>
         "{testimonial.text}"
       </p>
-      
+
       <div className="flex items-center">
         <div className="mr-4 w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md">
-          <ImageWithFallback 
-            src={testimonial.image} 
+          <ImageWithFallback
+            src={testimonial.image}
             alt={testimonial.name}
             className="w-full h-full object-cover"
             fallbackIcon={User}

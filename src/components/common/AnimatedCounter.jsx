@@ -41,9 +41,9 @@ const AnimatedCounter = ({ end, duration = 2000, prefix = '', suffix = '', darkM
   
   return (
     <div ref={countRef} className="text-3xl font-bold">
-      <span className={darkMode ? "text-violet-400" : "text-teal-600"}>{prefix}</span>
-      <span>{count}</span>
-      <span className={darkMode ? "text-violet-400" : "text-teal-600"}>{suffix}</span>
+      <span className={`transition-colors ${darkMode ? "text-violet-400" : "text-teal-600"}`}>{prefix}</span>
+      <span className="transition-colors">{count}</span>
+      <span className={`transition-colors ${darkMode ? "text-violet-400" : "text-teal-600"}`}>{suffix}</span>
     </div>
   );
 };
