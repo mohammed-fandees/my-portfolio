@@ -169,7 +169,7 @@ const About = () => {
               </div>
               <AnimatedCounter 
                 key={`counter-${stat.title}-${stat.title === 'Coding Hours' ? codingHours : stat.count}`}
-                end={stat.title === 'Coding Hours' ? (codingHours || 255) : stat.count} 
+                end={stat.title === 'Coding Hours' ? (codingHours || 460) : stat.count} 
                 suffix={stat.suffix || ''} 
               />
               <p className={`mt-2 transition-colors ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{stat.title}</p>
