@@ -2,17 +2,10 @@
 import { useTheme } from './contexts/ThemeContext';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
-import Hero from './components/sections/Hero';
-import About from './components/sections/About';
-import Services from './components/sections/Services';
-import Skills from './components/sections/Skills';
-import Portfolio from './components/sections/Portfolio';
-import Experience from './components/sections/Experience';
-import Testimonials from './components/sections/Testimonials';
-import Contact from './components/sections/Contact';
 import BackToTop from './components/common/BackToTop';
 import useScrollProgress from './hooks/useScrollProgress';
 import useActiveSection from './hooks/useActiveSection';
+import Home from './pages/Home';
 
 const App = () => {
   const { scrollProgress, showBackToTop, scrollToTop } = useScrollProgress();
@@ -46,16 +39,7 @@ const AppContent = ({ scrollProgress, showBackToTop, scrollToTop, activeSection 
 
       <Header activeSection={activeSection} />
 
-      <main>
-        <Hero />
-        <About />
-        <Services />
-        <Skills />
-        <Portfolio />
-        <Experience />
-        <Testimonials />
-        <Contact />
-      </main>
+      <Home />
 
       <Footer />
     </div>
