@@ -5,6 +5,7 @@ import ImageWithFallback from '../common/ImageWithFallback';
 import ScrollReveal from '../common/ScrollReveal';
 import { useTheme } from '../../contexts/ThemeContext';
 import hero from "../../assets/hero.jpg"
+import clientsList from '../../data/clients';
 
 const Hero = () => {
   const { darkMode } = useTheme();
@@ -60,34 +61,51 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="mt-12 flex items-center">
-              <div className="flex -space-x-2 client-image">
-                {["placeholder", "https://avatars.hsoubcdn.com/5e932290a0582dcddb15d9cd5931e80f?s=256"].map(i => (
-                  <div
-                    key={i}
-                    className={`w-10 h-10 rounded-full border-2 transition-colors ${darkMode ? 'border-gray-800 bg-gray-700' : 'border-white bg-gray-100'
+              <div className="mt-12 flex items-center">
+                {/* Client Avatars */}
+                <div className="flex -space-x-2 client-image">
+                  {clientsList.map((client, index) => (
+                    <div
+                      key={index}
+                      className={`w-10 h-10 rounded-full border-2 transition-colors ${
+                        darkMode ? 'border-gray-800 bg-gray-700' : 'border-white bg-gray-100'
                       } overflow-hidden shadow-md transition-transform hover:scale-110 hover:z-10 duration-300`}
-                  >
-                    <ImageWithFallback
-                      src={i}
-                      alt={`Client ${i}`}
-                      className="w-full h-full object-cover transition-colors"
-                      fallbackIcon={User}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className="ml-4">
-                <div className="flex items-center">
-                  {[1, 2, 3, 4, 5].map(i => (
-                    <svg key={i} className="w-4 h-4 text-yellow-400 fill-current client-image" viewBox="0 0 24 24">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
+                    >
+                      <ImageWithFallback
+                        src={client.avatar}
+                        alt={client.name}
+                        className="w-full h-full object-cover transition-colors"
+                        fallbackIcon={User}
+                      />
+                    </div>
                   ))}
                 </div>
-                <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>2 Satisfied Clients</p>
+
+                {/* Rating and Count */}
+                <div className="ml-4">
+                  <div className="flex items-center">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <svg
+                        key={i}
+                        className={`w-4 h-4 fill-current client-image ${
+                          i < Math.round(clientsList.reduce((sum, c) => sum + c.rating, 0) / clientsList.length)
+                            ? 'text-yellow-400'
+                            : darkMode
+                            ? 'text-gray-600'
+                            : 'text-gray-300'
+                        }`}
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className={`text-sm mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                    {clientsList.length} Satisfied Client{clientsList.length !== 1 ? 's' : ''}
+                  </p>
+                </div>
               </div>
-            </div>
+
           </ScrollReveal>
 
           <ScrollReveal animation="fade-left" delay={400}>
