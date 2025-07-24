@@ -1,14 +1,17 @@
 import { Users, Award, Clock7, Code as CodeStat } from 'lucide-react';
 import getWakaTime from "../utils/wakatime";
+import { projects } from './projects';
+
+import clientsList from './clients';
 
 export const stats = [
   {
-    count: 2,
+    count: clientsList.length,
     title: 'Clients',
     icon: Users
   },
   {
-    count: 25,
+    count: projects.length,
     title: 'Projects',
     icon: CodeStat
   },

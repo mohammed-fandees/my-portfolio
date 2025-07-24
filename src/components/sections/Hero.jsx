@@ -6,6 +6,7 @@ import ScrollReveal from '../common/ScrollReveal';
 import { useTheme } from '../../contexts/ThemeContext';
 import hero from "../../assets/hero.jpg"
 import clientsList from '../../data/clients';
+import { projects } from '../../data/projects';
 
 const Hero = () => {
   const { darkMode } = useTheme();
@@ -141,7 +142,7 @@ const Hero = () => {
                 <div className="flex items-center justify-center transition-colors">
                   <div className={`text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r transition-colors ${darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'
                     }`}>
-                    25+
+                    {projects.length}+
                   </div>
                 </div>
                 <div className="text-sm text-center font-medium transition-colors">Projects</div>
