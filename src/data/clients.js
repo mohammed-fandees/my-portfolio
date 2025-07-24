@@ -16,7 +16,7 @@ const clientsList = [
   },
   {
     name: "Youssef Tamer",
-    avatar: "/src/assets/client-4.jpg",
+    avatar: "https://avatars.githubusercontent.com/u/144534389?v=4",
     rating: 5
   }
 ];
