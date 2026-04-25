@@ -1,63 +1,104 @@
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { CheckCircle, AlertTriangle, X } from 'lucide-react';
-import { useTheme } from '../../contexts/ThemeContext';
 
 const Notification = ({ type, message, onClose }) => {
-  const { darkMode } = useTheme();
-  
-  // Auto-close notification after 5 seconds
+  const [exiting, setExiting] = useState(false);
+
+  // Ref guards against double-dismiss (timer + manual click race)
+  const dismissedRef = useRef(false);
+  // Keep onClose fresh without adding it as effect dependency
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+
+  const dismiss = () => {
+    if (dismissedRef.current) return;
+    dismissedRef.current = true;
+    setExiting(true);
+    setTimeout(() => onCloseRef.current(), 360);
+  };
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      onClose();
-    }, 5000);
-    
-    return () => clearTimeout(timer);
-  }, [onClose]);
-  
-  // Determine styles based on notification type and theme
-  const getBgColor = () => {
-    if (type === 'success') {
-      return darkMode ? 'bg-green-800/90' : 'bg-green-100';
-    } else {
-      return darkMode ? 'bg-red-800/90' : 'bg-red-100';
-    }
-  };
-  
-  const getTextColor = () => {
-    if (type === 'success') {
-      return darkMode ? 'text-green-200' : 'text-green-800';
-    } else {
-      return darkMode ? 'text-red-200' : 'text-red-800';
-    }
-  };
-  
-  const getIconColor = () => {
-    if (type === 'success') {
-      return darkMode ? 'text-green-400' : 'text-green-600';
-    } else {
-      return darkMode ? 'text-red-400' : 'text-red-600';
-    }
-  };
-  
-  const Icon = type === 'success' ? CheckCircle : AlertTriangle;
-  
+    const t = setTimeout(dismiss, 5000);
+    return () => clearTimeout(t);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps — intentional: run once on mount
+
+  const isSuccess  = type === 'success';
+  const accent     = isSuccess ? '#22c55e' : '#ef4444';
+  const accentDim  = isSuccess ? 'rgba(34,197,94,0.12)' : 'rgba(239,68,68,0.14)';
+  const Icon       = isSuccess ? CheckCircle : AlertTriangle;
+  const title      = isSuccess ? 'Message sent!' : 'Something went wrong';
+
   return (
-    <div className={`fixed top-6 right-6 z-50 max-w-md rounded-lg shadow-lg transition-all duration-300 animate-slide-in ${getBgColor()} border ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
-      <div className="flex items-start p-4">
-        <div className="flex-shrink-0">
-          <Icon className={`w-6 h-6 ${getIconColor()}`} />
+    <div
+      role="status"
+      aria-live="polite"
+      className="fixed bottom-6 right-6 z-50 w-[320px] rounded-2xl overflow-hidden"
+      style={{
+        background: 'rgba(12,12,12,0.97)',
+        border: '1px solid rgba(255,255,255,0.07)',
+        backdropFilter: 'blur(24px)',
+        WebkitBackdropFilter: 'blur(24px)',
+        boxShadow: `0 0 0 1px ${accent}30, 0 28px 70px rgba(0,0,0,0.65)`,
+        animation: exiting
+          ? 'notif-out 0.36s cubic-bezier(0.55,0,1,0.45) forwards'
+          : 'notif-in  0.52s cubic-bezier(0.34,1.56,0.64,1) forwards',
+      }}
+    >
+      {/* Left accent stripe */}
+      <div
+        className="absolute left-0 top-0 bottom-0 w-[3px]"
+        style={{ background: `linear-gradient(to bottom, ${accent}, ${accent}88)` }}
+      />
+
+      {/* Body */}
+      <div className="flex items-start gap-3 px-4 pt-4 pb-3 pl-5">
+        {/* Icon pill */}
+        <div
+          className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+          style={{ background: accentDim }}
+        >
+          <Icon size={17} strokeWidth={2} style={{ color: accent }} />
         </div>
-        <div className="ml-3 flex-1">
-          <p className={`text-sm font-medium ${getTextColor()}`}>
+
+        {/* Text */}
+        <div className="flex-1 min-w-0 pt-0.5">
+          <p className="text-sm font-semibold mb-0.5" style={{ color: 'var(--c-text)' }}>
+            {title}
+          </p>
+          <p className="text-xs leading-relaxed" style={{ color: 'var(--c-muted)' }}>
             {message}
           </p>
         </div>
-        <button 
-          onClick={onClose}
-          className={`ml-4 flex-shrink-0 inline-flex ${getTextColor()} hover:opacity-75 focus:outline-none transition-opacity duration-200`}
+
+        {/* Dismiss button */}
+        <button
+          onClick={dismiss}
+          aria-label="Dismiss notification"
+          className="p-1.5 rounded-lg flex-shrink-0 mt-0.5 transition-all duration-200"
+          style={{ color: 'var(--c-faint)' }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+            e.currentTarget.style.color = 'var(--c-text)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.color = 'var(--c-faint)';
+          }}
         >
-          <X className="w-5 h-5" />
+          <X size={14} />
         </button>
+      </div>
+
+      {/* Countdown progress bar — shrinks left-to-right over 5 s */}
+      <div style={{ height: 2, background: 'rgba(255,255,255,0.05)' }}>
+        <div
+          style={{
+            height: '100%',
+            background: `linear-gradient(to right, ${accent}, ${accent}99)`,
+            transformOrigin: '0% 50%',
+            animation: 'notif-progress 5s linear forwards',
+          }}
+        />
       </div>
     </div>
   );

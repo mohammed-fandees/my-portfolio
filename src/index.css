@@ -1,11 +1,69 @@
 @import "tailwindcss";
 
+/* ─── Hide native scrollbar (preserve scroll functionality) ────────────── */
 html {
-  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+html::-webkit-scrollbar {
+  display: none; /* Chrome / Safari / Edge */
+}
+
+/* ─── Lenis overrides ──────────────────────────────────────────────────── */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ─── Design tokens ────────────────────────────────────────────────────── */
+:root {
+  /* Canvas */
+  --c-bg: #080808;
+  --c-surface: #111111;
+  --c-surface-2: #181818;
+
+  /* Borders */
+  --c-border: rgba(255, 255, 255, 0.08);
+  --c-border-dim: rgba(255, 255, 255, 0.04);
+
+  /* Text */
+  --c-text: #ededed;
+  --c-muted: #71717a;
+  --c-faint: #3f3f46;
+
+  /* Accent — purple/violet */
+  --c-accent: #a855f7;
+  --c-accent-dim: rgba(168, 85, 247, 0.12);
+  --c-accent-glow: rgba(168, 85, 247, 0.3);
+
+  /* Accent 2 — cyan */
+  --c-cyan: #22d3ee;
+  --c-cyan-dim: rgba(34, 211, 238, 0.1);
+}
+
+/* ─── Base ─────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   overflow-x: hidden;
+  background: var(--c-bg);
+  color: var(--c-text);
 }
 
 button {
@@ -16,23 +74,74 @@ button {
   overflow-x: hidden;
 }
 
-.hero-image {
-  transition: border 260ms cubic-bezier(0.4, 0, 0.2, 1), rotate 500ms cubic-bezier(0.4, 0, 0.2, 1);
+/* Skip render work for below-the-fold sections until needed. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
 }
 
-.client-image * {
-  transition: all 260ms cubic-bezier(0.4, 0, 0.2, 1);
+/* ─── Cinematic utility classes ────────────────────────────────────────── */
+/* Use these in JSX instead of repeating long Tailwind ternaries */
+.c-border {
+  border-color: var(--c-border);
+}
+.c-text {
+  color: var(--c-text);
+}
+.c-muted {
+  color: var(--c-muted);
+}
+.c-surface {
+  background: var(--c-surface);
 }
 
-/* For elements that need longer or more pronounced transitions, override as needed in component classes */
+/* Outline text — used in display headings for depth contrast */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(237, 237, 237, 0.55);
+}
 
+/* Glow underline on hover — used for interactive links */
+.hover-glow {
+  transition: text-shadow 0.3s ease;
+}
+.hover-glow:hover {
+  text-shadow: 0 0 30px var(--c-accent-glow);
+}
+
+/* Section fade-through overlay — creates visual bleed between sections */
+.section-fade-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--c-bg));
+  pointer-events: none;
+}
+
+/* Narrative spine track + fill */
+.spine-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+.spine-fill {
+  background: linear-gradient(to bottom, var(--c-accent), #e879f9);
+}
+
+/* Scroll progress bar gradient */
+.progress-bar {
+  background: linear-gradient(to right, var(--c-accent), #e879f9);
+}
+
+/* ─── Keyframes ─────────────────────────────────────────────────────────── */
 @keyframes pulse-slow {
   0%,
   100% {
-    opacity: 0.7;
+    opacity: 0.6;
   }
   50% {
-    opacity: 0.3;
+    opacity: 0.2;
   }
 }
 @keyframes float {
@@ -52,11 +161,67 @@ button {
     transform: translateX(-50%);
   }
 }
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ─── Notification animations ─────────────────────────────────────────── */
+@keyframes notif-in {
+  from {
+    transform: translateX(calc(100% + 1.75rem)) scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes notif-out {
+  from {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(calc(100% + 1.75rem)) scale(0.92);
+    opacity: 0;
+  }
+}
+@keyframes notif-progress {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
 .animate-pulse-slow {
-  animation: pulse-slow 4s ease-in-out infinite;
+  animation: pulse-slow 5s ease-in-out infinite;
 }
 .animate-float {
-  animation: float 5s ease-in-out infinite;
+  animation: float 6s ease-in-out infinite;
+}
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+.animate-infinite-scroll {
+  animation: infinite-scroll linear infinite;
 }
 .animation-delay-1000 {
   animation-delay: 1s;
@@ -64,6 +229,117 @@ button {
 .animation-delay-2000 {
   animation-delay: 2s;
 }
-.animate-infinite-scroll {
-  animation: infinite-scroll linear infinite;
+.animation-delay-3000 {
+  animation-delay: 3s;
+}
+
+/* ─── Hero scroll indicator — CSS entrance (immune to GSAP/StrictMode race) ── */
+@keyframes indicator-rise {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0);    }
+}
+.hero-indicator {
+  /* Delay matches ~end of hero entrance timeline (~1.4 s) */
+  animation: indicator-rise 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.4s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-indicator { animation: none; opacity: 1; transform: translateX(-50%); }
+}
+
+/* ─── Typography scale ─────────────────────────────────────────────────── */
+/* Chapter eyebrow — monospace, ultra-tracked, tiny */
+.eyebrow {
+  font-family: ui-monospace, "Cascadia Code", "Fira Code", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+
+/* Display — the big statement text in each section */
+.display-xl {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+.display-lg {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+.display-md {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* ─── Performance: only promote GPU layers when motion is expected ────────── */
+@media (prefers-reduced-motion: reduce), (max-width: 1023px) {
+  .will-change-transform { will-change: auto !important; }
+}
+
+/* ─── Component-specific styles ─────────────────────────────────────────── */
+/* Hero photo mask — gradient from right (photo) to transparent (text) */
+.hero-photo-mask {
+  -webkit-mask-image: linear-gradient(to left, black 40%, transparent 100%);
+  mask-image: linear-gradient(to left, black 40%, transparent 100%);
+}
+
+/* Skill track — the thin line that scrubs */
+.skill-track {
+  height: 1px;
+  background: var(--c-border);
+  position: relative;
+  overflow: hidden;
+}
+.skill-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: linear-gradient(to right, var(--c-accent), var(--c-cyan));
+  will-change: width;
+}
+
+/* Tech chip */
+.tech-chip {
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  border: 1px solid var(--c-border);
+  font-size: 0.8rem;
+  color: var(--c-muted);
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+.tech-chip:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  color: var(--c-accent);
+  background: var(--c-accent-dim);
+}
+
+/* Thin divider */
+.divider {
+  height: 1px;
+  background: var(--c-border-dim);
+}
+
+/* Contact email link */
+.email-display {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--c-text);
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.email-display:hover {
+  color: var(--c-accent);
 }

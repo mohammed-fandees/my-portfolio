@@ -14,7 +14,7 @@
     <!-- Open Graph Meta Tags (For Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="Mohammed Fandees | Frontend Web Developer & UI/UX Specialist">
     <meta property="og:description" content="Passionate web developer specializing in creating engaging, fast, and user-friendly websites.">
-    <meta property="og:image" content="https://mohammed-fandees.vercel.app/preview.jpg">
+    <meta property="og:image" content="https://mohammed-fandees.vercel.app/preview.avif">
     <meta property="og:image:alt" content="Mohammed Fandees - Web Developer Portfolio">
     <meta property="og:url" content="https://mohammed-fandees.vercel.app/">
     <meta property="og:type" content="website">
@@ -23,7 +23,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mohammed Fandees | Web Developer">
     <meta name="twitter:description" content="Passionate frontend developer specializing in responsive, high-performance websites.">
-    <meta name="twitter:image" content="https://mohammed-fandees.vercel.app/preview.jpg">
+    <meta name="twitter:image" content="https://mohammed-fandees.vercel.app/preview.avif">
     <meta name="twitter:image:alt" content="Screenshot of Mohammed Fandees' portfolio">
 
     <!-- Author Info -->
@@ -40,6 +40,16 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://mohammed-fandees.vercel.app/">
 
+    <!-- Preconnect so font TCP/TLS handshake runs in parallel with HTML parse -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Load Inter async — avoids render-blocking while still swapping in quickly -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap"></noscript>
+    <!-- DNS prefetch for analytics (non-blocking) -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+
     <!-- Structured Data (Schema.org) -->
     <script type="application/ld+json">
       {
@@ -48,7 +58,7 @@
         "name": "Mohammed Fandees",
         "jobTitle": "Frontend Web Developer & UI/UX Specialist",
         "url": "https://mohammed-fandees.vercel.app/",
-        "image": "https://mohammed-fandees.vercel.app/profile.jpg",
+        "image": "https://mohammed-fandees.vercel.app/preview.avif",
         "sameAs": [
           "https://linkedin.com/in/mohammed-fandees",
           "https://github.com/mohammed-fandees"
@@ -60,26 +70,26 @@
         "knowsAbout": ["JavaScript", "React", "UI/UX", "Frontend Development"]
       }
     </script>
-        <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WWYP7M3MD2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-WWYP7M3MD2');
-    </script>
-
     <script type="text/javascript">
       var _iub = _iub || [];
       _iub.csConfiguration = {"siteId":4147097,"cookiePolicyId":42358796,"lang":"en","storage":{"useSiteId":true}};
     </script>
+    <!-- 
       <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4147097.js"></script>
       <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
       <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    -->
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- Analytics loads after page content — does not block rendering -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-WWYP7M3MD2"></script>
+    <script defer>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WWYP7M3MD2', { send_page_view: true });
+    </script>
   </body>
 </html>
