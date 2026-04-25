@@ -1,40 +1,51 @@
-
 import { navItems } from '../../data/navItems';
-import { useTheme } from '../../contexts/ThemeContext';
 
-const MobileMenu = ({ isOpen, activeSection, onClose }) => {
-  const { darkMode } = useTheme();
-
-  return (
-    <div
-      className={`xl:hidden ${darkMode ? 'bg-gray-900 border-gray-800' : 'bg-white border-gray-200'} transition-all duration-300 overflow-hidden border-t ${isOpen ? 'max-h-105 opacity-100' : 'max-h-0 opacity-0'
-        }`}
-    >
-      <div className="px-2 pt-2 pb-3 space-y-1">
-        {navItems.map(item => (
+const MobileMenu = ({ isOpen, activeSection, onClose }) => (
+  <div
+    className={`xl:hidden transition-all duration-300 overflow-hidden border-t ${
+      isOpen ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0'
+    }`}
+    style={{
+      background: 'rgba(8,8,8,0.96)',
+      borderColor: 'var(--c-border)',
+      backdropFilter: 'blur(20px)',
+    }}
+  >
+    <div className="px-4 pt-3 pb-5 space-y-1">
+      {navItems.map((item) => {
+        const isActive = activeSection === item.href.substring(1);
+        return (
           <a
             key={item.name}
             href={item.href}
-            className={`block px-3 py-2 rounded-md text-base font-medium ${activeSection === item.href.substring(1)
-                ? (darkMode ? 'bg-gray-800 text-violet-400' : 'bg-gray-100 text-teal-600')
-                : (darkMode ? 'text-gray-300 hover:bg-gray-800 hover:text-white' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900')
-              } transition-colors duration-300`}
+            className="block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors duration-200"
+            style={{
+              background: isActive ? 'var(--c-accent-dim)' : 'transparent',
+              color: isActive ? 'var(--c-accent)' : 'rgba(255,255,255,0.55)',
+            }}
+            onMouseEnter={(e) => {
+              if (!isActive) e.currentTarget.style.color = 'rgba(255,255,255,0.9)';
+            }}
+            onMouseLeave={(e) => {
+              if (!isActive) e.currentTarget.style.color = 'rgba(255,255,255,0.55)';
+            }}
             onClick={onClose}
           >
             {item.name}
           </a>
-        ))}
-        <a
-          href="#contact"
-          className={`block px-3 py-2 rounded-md text-base font-medium text-white ${darkMode ? 'bg-violet-600 hover:bg-violet-700' : 'bg-teal-600 hover:bg-teal-700'
-            } transition-colors duration-300`}
-          onClick={onClose}
-        >
-          Hire Me
-        </a>
-      </div>
+        );
+      })}
+
+      <a
+        href="#contact"
+        className="block mt-2 px-4 py-2.5 rounded-full text-sm font-medium text-center text-white transition-all duration-200 hover:brightness-110"
+        style={{ background: 'var(--c-accent)' }}
+        onClick={onClose}
+      >
+        Hire Me
+      </a>
     </div>
-  );
-};
+  </div>
+);
 
 export default MobileMenu;

@@ -1,37 +1,42 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useReducedMotion } from './useReducedMotion';
+import { getLenis } from '../animation/lenis';
 
+// Scaled-down from the old implementation: the progress *bar* is now its own
+// self-driven component (ScrollProgress), so this hook no longer tracks
+// progress as React state — only the back-to-top visibility threshold, which
+// genuinely needs to mount/unmount a DOM node.
 const useScrollProgress = () => {
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const prefersReducedMotion = useReducedMotion();
 
-  const handleScroll = useCallback(() => {
-    // Calculate scroll progress
-    const scrollY = window.scrollY;
-    const totalHeight = document.body.scrollHeight - window.innerHeight;
-    const progress = (scrollY / totalHeight) * 100;
-    
-    // Update scroll progress
-    setScrollProgress(progress);
-    
-    // Show/hide back to top button
-    setShowBackToTop(scrollY > 500);
+  useEffect(() => {
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        setShowBackToTop(window.scrollY > 500);
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
-
   const scrollToTop = useCallback(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: prefersReducedMotion ? 'auto' : 'smooth'
-    });
+    // Route through Lenis so it matches the rest of the app's scroll feel.
+    // Fallback to native for the brief window before Lenis has mounted.
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: prefersReducedMotion });
+    } else {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+    }
   }, [prefersReducedMotion]);
 
-  return { scrollProgress, showBackToTop, scrollToTop };
+  return { showBackToTop, scrollToTop };
 };
 
 export default useScrollProgress;

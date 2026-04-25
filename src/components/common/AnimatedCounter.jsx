@@ -1,49 +1,47 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import { useState, useRef, useEffect} from "react";
+import { useState, useRef, useEffect } from 'react';
+import { ScrollTrigger } from '../../animation/gsap';
 
-const AnimatedCounter = ({ end, duration = 2000, prefix = '', suffix = '', darkMode }) => {
+// Drives the counter via a single ScrollTrigger onEnter instead of its own
+// IntersectionObserver — consistent with the new animation layer.
+const AnimatedCounter = ({ end, duration = 1800, prefix = '', suffix = '' }) => {
   const [count, setCount] = useState(0);
-  const countRef = useRef(null);
-  
+  const ref = useRef(null);
+
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          let start = 0;
-          const step = end / (duration / 16);
-          const timer = setInterval(() => {
-            start += step;
-            if (start > end) {
-              setCount(end);
-              clearInterval(timer);
-            } else {
-              setCount(Math.floor(start));
-            }
-          }, 16);
-          
-          observer.unobserve(countRef.current);
-          return () => clearInterval(timer);
-        }
+    const el = ref.current;
+    if (!el || !end) return;
+
+    let intervalId;
+    const st = ScrollTrigger.create({
+      trigger: el,
+      start: 'top 90%',
+      once: true,
+      onEnter: () => {
+        let start = 0;
+        const step = end / (duration / 16);
+        intervalId = setInterval(() => {
+          start += step;
+          if (start >= end) {
+            setCount(end);
+            clearInterval(intervalId);
+          } else {
+            setCount(Math.floor(start));
+          }
+        }, 16);
       },
-      { threshold: 0.1 }
-    );
-    
-    if (countRef.current) {
-      observer.observe(countRef.current);
-    }
-    
+    });
+
     return () => {
-      if (countRef.current) {
-        observer.unobserve(countRef.current);
-      }
+      st.kill();
+      clearInterval(intervalId);
     };
   }, [end, duration]);
-  
+
   return (
-    <div ref={countRef} className="text-3xl font-bold">
-      <span className={`transition-colors ${darkMode ? "text-violet-400" : "text-teal-600"}`}>{prefix}</span>
-      <span className="transition-colors">{count}</span>
-      <span className={`transition-colors ${darkMode ? "text-violet-400" : "text-teal-600"}`}>{suffix}</span>
+    <div ref={ref} className="text-3xl font-bold tabular-nums" style={{ color: 'var(--c-text)' }}>
+      <span style={{ color: 'var(--c-accent)' }}>{prefix}</span>
+      {count}
+      <span style={{ color: 'var(--c-accent)' }}>{suffix}</span>
     </div>
   );
 };

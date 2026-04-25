@@ -1,20 +1,35 @@
-import { useTheme } from "../../contexts/ThemeContext";
+import useReveal from '../../hooks/useReveal';
 
-const SectionTitle = ({ title, subtitle, centered = true }) => {
-
-  const { darkMode } = useTheme();
+// Used by Experience and Testimonials — upgraded to match the cinematic design
+// language without touching those sections' internals. The gradient underline
+// bar is gone; eyebrow + statement + muted subtitle replaces it.
+const SectionTitle = ({ title, subtitle, chapter, centered = true }) => {
+  const ref = useReveal('fade-up', { delay: 0 });
 
   return (
-    <div className={`${centered ? 'text-center' : ''} mb-12`}>
-      <h2 className="text-4xl font-bold mb-4 transition-colors" id={`${title.toLowerCase()}-title`}>{title}</h2>
-      <div
-        className={`h-1 rounded-full mb-4 ${centered ? 'mx-auto w-24' : 'w-16'} bg-gradient-to-r transition-colors ${darkMode ? 'from-violet-500 to-fuchsia-500' : 'from-emerald-500 to-teal-500'
-          }`}
-        aria-hidden="true"
-      ></div>
-      {subtitle && <p className={`transition-colors ${darkMode ? 'text-gray-300' : 'text-gray-600'} max-w-2xl ${centered ? 'mx-auto' : ''}`}>{subtitle}</p>}
+    <div ref={ref} className={`${centered ? 'text-center' : ''} mb-16`}>
+      {chapter && (
+        <p className="eyebrow mb-4" style={{ color: 'var(--c-accent)' }}>
+          {chapter}
+        </p>
+      )}
+      <h2
+        id={`${title.toLowerCase().replace(/\s+/g, '-')}-title`}
+        className="display-md mb-4"
+        style={{ color: 'var(--c-text)' }}
+      >
+        {title}
+      </h2>
+      {subtitle && (
+        <p
+          className={`text-sm leading-relaxed max-w-xl ${centered ? 'mx-auto' : ''}`}
+          style={{ color: 'var(--c-muted)' }}
+        >
+          {subtitle}
+        </p>
+      )}
     </div>
-  )
+  );
 };
 
 export default SectionTitle;

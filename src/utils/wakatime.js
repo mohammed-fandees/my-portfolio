@@ -18,28 +18,20 @@ async function getWakaTime() {
     }
 
     const data = await response.json();
-    console.log("WakaTime data received:", data);
-    
-    // If the Edge Function is returning just the coding hours
+
     if (data.codingHours !== undefined) {
       return data.codingHours;
     }
-    
-    // Otherwise, parse the full response
-    if (data.data && data.data.categories) {
+
+    if (data.data?.categories) {
       const codingCategory = data.data.categories.find(
         (category) => category.name === "Coding"
       );
-
-      if (codingCategory) {
-        return codingCategory.hours;
-      }
+      if (codingCategory) return codingCategory.hours;
     }
 
-    console.log("Error: No coding data found in response:", data);
     return null;
-  } catch (error) {
-    console.error("Error fetching WakaTime hours:", error);
+  } catch {
     return null;
   }
 }

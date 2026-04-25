@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 
-// eslint-disable-next-line no-unused-vars
 const ImageWithFallback = ({ src, alt, className, fallbackIcon: FallbackIcon }) => {
   const [error, setError] = useState(false);
   const { darkMode } = useTheme();
